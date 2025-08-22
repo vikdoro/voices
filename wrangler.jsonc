@@ -4,8 +4,8 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "voices-from-auschwitz-spa",
-	"compatibility_date": "2025-08-21",
+	"name": "voices",
+	"compatibility_date": "2025-08-16",
 	"main": "server/index.ts",
 	"assets": {
 		"not_found_handling": "single-page-application"

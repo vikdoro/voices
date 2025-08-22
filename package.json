@@ -1,5 +1,5 @@
 {
-	"name": "voices-from-auschwitz-spa",
+	"name": "voices",
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
@@ -26,6 +26,7 @@
 		"@vitejs/plugin-vue": "^6.0.1",
 		"@vue/tsconfig": "^0.7.0",
 		"npm-run-all2": "^8.0.4",
+		"sass": "^1.90.0",
 		"typescript": "~5.8.0",
 		"vite": "^7.0.6",
 		"vite-plugin-vue-devtools": "^8.0.0",

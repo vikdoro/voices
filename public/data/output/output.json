@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "publications",
+    "title": "Publications",
+    "coverImage": "image-1.png",
+    "description": "Our publications cover the Holocaust, computational approaches to history, data science and multimodality.",
+    "items": [
+      {
+        "title": "Virtual Holocaust Memory, a book review",
+        "type": "Digital",
+        "authors": "Gabor Mihaly Toth"
+      },
+      {
+        "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
+        "type": "Digital",
+        "image": "image-1.png",
+        "authors": "Gabor Mihaly Toth"
+      },
+      {
+        "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
+        "type": "Digital",
+        "image": "image-1.png",
+        "authors": "Gabor Mihaly Toth"
+      }
+    ]
+  },
+  {
+    "slug": "talks-workshops",
+    "title": "Talks & Workshops",
+    "coverImage": "image-2.png",
+    "description": "We often give talks and workshops at venues such as scientific conferences, summer schools, and secondary schools.",
+    "items": [
+      {
+        "title": "Multimodal Time Series Analysis",
+        "type": "On-site & Online",
+        "location": "Digital Humanities Summer Institute, University of Montreal",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth, Mohamed Laib"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "type": "On-site & Online",
+        "location": "Riga University",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth",
+        "organisations": "Holocaust and Genocide Studies"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "type": "On-site & Online",
+        "location": "Riga University",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth",
+        "organisations": "Holocaust and Genocide Studies"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "type": "On-site & Online",
+        "location": "Riga University",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth",
+        "organisations": "Holocaust and Genocide Studies"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "type": "On-site & Online",
+        "location": "Riga University",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth",
+        "organisations": "Holocaust and Genocide Studies"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "type": "On-site & Online",
+        "location": "Riga University",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth",
+        "organisations": "Holocaust and Genocide Studies"
+      }
+    ]
+  },
+  {
+    "slug": "podcasts-webinars",
+    "title": "Podcasts & Webinars",
+    "coverImage": "image-3.png",
+    "description": "We are keen to achieve a broader impact; we therefore record a podcast series, as well as online webinars.",
+    "items": [
+      {
+        "title": "Textual Data Processing with LLM in the Humanities",
+        "type": "Online",
+        "image": "image-3.png",
+        "authors": "Gabor Mihaly Toth"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "type": "Online",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth",
+        "organisations": "Holocaust and Genocide Studies"
+      }
+    ]
+  },
+  {
+    "slug": "digital-memorial",
+    "title": "Digital Memorial",
+    "coverImage": "image-4.png",
+    "description": "Our project aims to develop a digital memorial that presents the multimodal memory of the Auschwitz Camp. This is a work in progress; we aim to launch it in 2027.",
+    "items": [
+      {
+        "title": "Digital Memorial 1",
+        "type": "Online",
+        "image": "image-4.png",
+        "authors": "Gabor Mihaly Toth"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "type": "Online",
+        "image": "image-2.png",
+        "authors": "Gabor Mihaly Toth"
+      }
+    ]
+  }
+]

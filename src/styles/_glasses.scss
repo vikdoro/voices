@@ -1,0 +1,61 @@
+.main-visual {
+    .glass-layer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img.glass-1 {
+            position: absolute;
+            top: 615px;
+            left: 873px;
+            width: 608px;
+        }
+        
+        img.glass-2 {
+            position: absolute;
+            top: 123px;
+            left: 1247px;
+            width: 329px;
+        }
+        
+        img.glass-3 {
+            display: none;
+            position: absolute;
+            top: 600px;
+            left: 100px;
+            width: 329px;
+        }
+        
+        img.glass-4 {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 500px;
+            width: 138px;
+        }
+        
+        img.glass-5 {
+            display: none;
+            position: absolute;
+            top: 300px;
+            left: 100px;
+            width: 449px;
+        }
+        
+        img.glass-6 {
+            display: none;
+            position: absolute;
+            top: 600px;
+            left: 100px;
+            width: 259px;
+        }
+        
+        img.glass-7 {
+            display: none;
+            position: absolute;
+            top: 600px;
+            left: 100px;
+            width: 298px;
+        }
+    }
+}

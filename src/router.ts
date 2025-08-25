@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import Layout from './Layout.vue';
 
 // Lazy load pages
 const Home = () => import('./pages/Home.vue');
@@ -8,9 +9,15 @@ const Output = () => import('./pages/Output.vue');
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', name: 'home', component: Home },
-    { path: '/people', name: 'people', component: People },
-    { path: '/output', name: 'output', component: Output },
+    {
+      path: '/',
+      component: Layout,
+      children: [
+        { path: '', name: 'home', component: Home },
+        { path: 'people', name: 'people', component: People },
+        { path: 'output', name: 'output', component: Output },
+      ]
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     // Scroll to the top, but only if it's not the same page

@@ -1,13 +1,13 @@
 <template>
-    <div class="nav-menu">
+    <div class="desktop-nav-menu">
         <div class="links">
             <div class="link-container">
-                <a href="/">Home</a>
+                <RouterLink to="/">Home</RouterLink>
             </div>
             <div class="link-container extendible">
-                <a href="/people">
+                <RouterLink to="/people">
                     <span>People</span>
-                </a>
+                </RouterLink>
                 <div class="sub-menu-container">
                     <div class="sub-menu">
                         <RouterLink to="/people#team-members">Team members</RouterLink>
@@ -16,9 +16,9 @@
                 </div>
             </div>
             <div class="link-container extendible">
-                <a href="/output">
+                <RouterLink to="/output">
                     <span>Output</span>
-                </a>
+                </RouterLink>
                 <div class="sub-menu-container">
                     <div class="sub-menu">
                         <RouterLink to="/output#publications">Publications</RouterLink>
@@ -29,15 +29,22 @@
                 </div>
             </div>
             <div class="link-container">
-                <a href="/about">Contact</a>
+                <RouterLink to="/about">Contact</RouterLink>
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-
+import { RouterLink } from 'vue-router';
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@use '../styles/breakpoints' as *;
+
+@media (max-width: $mobile) {
+    .desktop-nav-menu {
+        display: none;
+    }
+}
 </style>

@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import ContentCategory from '../components/ContentCategory.vue';
 import ContentCard from '../components/ContentCard.vue';
 import categoriesData from '../data/people/people.json';
@@ -39,4 +39,9 @@ const categories = ref<PeopleCategory[]>(categoriesData);
 
 // Use the hash scroll composable
 useHashScroll();
+
+// This will run every time the People component is mounted
+onMounted(() => {
+  console.log('People component mounted');
+});
 </script>

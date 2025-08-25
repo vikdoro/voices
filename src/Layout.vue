@@ -1,16 +1,24 @@
 <template>
     <div class="nav-container">
         <nav>
-            <a href="/" class="logo-link">
+            <RouterLink to="/" class="logo-link">
                 <img src="/logo.svg" alt="Voices from Auschwitz Logo" class="logo">
-            </a>
+            </RouterLink>
             <DesktopNav />
             <MobileNav />
         </nav>
     </div>
          <div class="view-container">
+            <img src="/glasses/glass-1.png" alt="Broken glass" class="glass-1">
+            <img src="/glasses/glass-3.png" alt="Broken glass" class="glass-3">
+            <img src="/glasses/glass-4.png" alt="Broken glass" class="glass-4">
+            <img src="/glasses/glass-5.png" alt="Broken glass" class="glass-5">
+
+            <img src="/glasses/glass-2.png" alt="Broken glass" class="glass-2">
+            <img src="/glasses/glass-6.png" alt="Broken glass" class="glass-6">
+            <img src="/glasses/glass-7.png" alt="Broken glass" class="glass-7">
          <div class="main-visual">
-            <div class="glass-layer">
+            <!-- <div class="glass-layer">
                 <img src="/glasses/glass-1.png" alt="Broken glass" class="glass-1">
                 <img src="/glasses/glass-2.png" alt="Broken glass" class="glass-2">
                 <img src="/glasses/glass-3.png" alt="Broken glass" class="glass-3">
@@ -18,11 +26,21 @@
                 <img src="/glasses/glass-5.png" alt="Broken glass" class="glass-5">
                 <img src="/glasses/glass-6.png" alt="Broken glass" class="glass-6">
                 <img src="/glasses/glass-7.png" alt="Broken glass" class="glass-7">
-            </div>
+            </div> -->
          </div>
+        <!-- <div class="main-visual-2">
+            <div class="glass-layer">
+                
+            </div>
+        </div> -->
+        <!-- <div class="main-visual-3">
+            <div class="glass-layer">
+
+            </div>
+        </div> -->
 
          <main id="view">
-             <slot />
+             <RouterView />
          </main>
      </div>
     <div class="footer-visual"></div>
@@ -48,7 +66,7 @@
             </div>
             <div class="footer-section">
                 <div class="contact-container">
-                    <h3>Contact</h3>
+                    <h2>Contact</h2>
                     <a href="mailto:univestity@uni.lu">email: univestity@uni.lu</a>
                 </div>
                 <hr />
@@ -62,8 +80,17 @@
 </template>
 
 <script setup lang="ts">
+import { RouterView } from 'vue-router';
+import { onMounted, onUnmounted } from 'vue';
 import DesktopNav from './components/DesktopNav.vue';
 import MobileNav from './components/MobileNav.vue';
 
+// This will only run once when the Layout component is mounted
+onMounted(() => {
+  console.log('Layout component mounted');
+});
 
+onUnmounted(() => {
+  console.log('Layout component unmounted');
+});
 </script>

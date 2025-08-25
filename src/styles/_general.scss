@@ -20,8 +20,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
 * {
     box-sizing: border-box;
+}
+
+body.mobile-menu-open .view-container * {
+    color: transparent !important;
+    text-shadow: none !important;
 }
 
 .view-container {
@@ -36,7 +42,7 @@ body {
     background-position: -245px -500px;
     transition: background-position 0.5s ease-in-out;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $large-desktop) {
         background-position: -445px -500px;
         padding-top: 100px;
     }
@@ -57,11 +63,7 @@ body {
     // width: calc(100vw + 490px);
     max-width: 2770px;
     height: 100%;
-    background-image: image-set(
-        url('/bg@1x.png') 1x,
-        url('/bg@2x.png') 2x,
-        url('/bg@3x.jpg') 3x
-    );
+    background-image: url('/bg@1x.jpg');
     background-repeat: no-repeat;
     background-position: -240px -500px;
     background-size: 3003px auto;
@@ -71,6 +73,31 @@ body {
     @media (max-width: $large-desktop) {
         background-position: -725px -500px;
     }
+}
+.main-visual-2 {
+    position: absolute;
+    width: 100vw;
+    max-width: 2770px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    max-width: 2770px;
+    height: 100%;
+    transform: translateZ(0);
+}
+
+.main-visual-3 {
+    position: absolute;
+    width: 100vw;
+    max-width: 2770px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    max-width: 2770px;
+    height: 100%;
+    transform: translateZ(0);
 }
 
 .nav-container {
@@ -82,7 +109,7 @@ body {
     z-index: 3;
     background: linear-gradient(to top, transparent, black);
 
-    @media (max-width: $tablet) {
+    @media (max-width: $desktop) {
         height: 100px;
     }
 
@@ -104,18 +131,20 @@ nav {
     padding: 24px 8px;
     overflow: hidden;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $desktop) {
         padding: 20px 24px;
         height: 100px;
     }
 
     @media (max-width: $mobile) {
         align-items: center;
+        padding: 16px 16px 16px 0;
     }
 
     .logo-link {
         display: block;
         text-decoration: none;
+        padding: 4px 16px;
     }
 
     .logo {
@@ -134,10 +163,25 @@ nav {
         }
     }
 
-    .nav-menu {
+    .desktop-nav-menu {
         position: relative;
         display: flex;
         align-items: center;
+
+        a {
+            color: white;
+            font-size: 16px;
+            margin: 0 8px;
+            text-decoration: none;
+            position: relative;
+            padding: 4px 16px;
+            margin: 0;
+            transition: color 0.3s ease;
+    
+            &:hover {
+                color: vars.$accent;
+            }
+        }
     }
 
     .links {
@@ -240,21 +284,6 @@ nav {
         }
     }
 
-    a {
-        color: white;
-        font-size: 16px;
-        margin: 0 8px;
-        text-decoration: none;
-        position: relative;
-        padding: 4px 16px;
-        margin: 0;
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: vars.$accent;
-        }
-    }
-
 }
 
 #view {
@@ -269,7 +298,6 @@ nav {
     section {
         width: 100%;
         margin: 0 auto;
-        padding: 0 24px;
     }
 }
 
@@ -289,6 +317,10 @@ footer {
 
     h2 {
         margin: 0 0 24px 0;
+
+        @media (max-width: $mobile) {
+            font-size: 18px;
+        }
     }
 
     .footer-section {
@@ -296,7 +328,7 @@ footer {
         margin: 0 auto;
 
         &:not(:first-child) {
-            margin-top: 48px;
+            margin-top: 56px;
         }
 
         .logo-container-left-aligned {
@@ -368,10 +400,6 @@ h1.subheader {
 h2 {
     font-size: 24px;
     font-weight: 500;
-
-    @media (max-width: $mobile) {
-        font-size: 18px;
-    }
 }
 
 h3 {

@@ -1,6 +1,14 @@
 @use 'vars';
 @use 'breakpoints' as *;
 
+.content-category {
+    @media (max-width: $mobile) {
+        h2 {
+            font-size: 18px;
+        }
+    }
+}
+
 .content-card {
     position: relative;
     z-index: 2;

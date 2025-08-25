@@ -4,24 +4,34 @@
 .home-container {
     h2 {
         margin: 21px 0;
+
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        padding: 0 24px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 0 16px;
     }
 }
 
 #view section.home-section {
-    min-height: calc(100vh - 127px);
+    height: calc(100vh - 127px);
+    min-height: 1020px;
     display: block;
     padding: 273px 0 0 218px;
 
     @media (max-width: $large-desktop) {
-        padding: 240px 0 0 96px;
-    }
-
-    @media (max-width: $tablet) {
-        padding: 200px 24px 0;
+        padding: 273px 0 0 96px;
     }
 
     @media (max-width: $mobile) {
-        padding: 160px 16px 0;
+        padding: 273px 16px 0;
+        min-height: 880px;
     }
 
     h1.intro {
@@ -157,19 +167,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 0 480px;
+    padding: 120px 0 467px;
+
+    @media (max-width: $tablet) {
+        padding: 128px 0 332px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 128px 0 232px;
+    }
 
     .about-content {
         max-width: 800px;
         background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.8) 75%, transparent 100%);
         margin: 0 auto;
-    
         
         p {
             font-size: 16px;
             margin-bottom: 24px;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
+
+            @media (max-width: $desktop) {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -246,20 +267,17 @@
         justify-content: center;
         padding: 40px;
         position: relative;
-    }
 
-    @media (max-width: $tablet) {
-        .home-output-item-description-container {
+        @media (max-width: $tablet) {
             flex: 1 1 50%;
             max-width: 100%;
             padding: 20px;
         }
-    }
-
-    @media (max-width: $mobile) {
-        .home-output-item-description-container {
-            padding: 16px;
+    
+        @media (max-width: $mobile) {
+            padding: 72px 32px;
         }
+
     }
 
     .home-output-item-description-text {

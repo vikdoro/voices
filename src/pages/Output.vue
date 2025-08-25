@@ -44,6 +44,11 @@ const categories = ref<OutputCategory[]>(categoriesData);
 
 // Use the hash scroll composable
 useHashScroll();
+
+// This will run every time the Output component is mounted
+onMounted(() => {
+  console.log('Output component mounted');
+});
 </script>
 
 <style scoped>

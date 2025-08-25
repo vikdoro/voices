@@ -99,6 +99,11 @@ const outputItems = ref<OutputItem[]>(outputData);
 // Use the hash scroll composable
 useHashScroll();
 
+// This will run every time the Home component is mounted
+onMounted(() => {
+  console.log('Home component mounted');
+});
+
 const scrollToAbout = () => scrollToSection('about');
 </script>
 

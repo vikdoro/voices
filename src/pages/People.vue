@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import ContentCategory from '../components/ContentCategory.vue';
 import ContentCard from '../components/ContentCard.vue';
 import categoriesData from '../data/people/people.json';
@@ -40,8 +40,34 @@ const categories = ref<PeopleCategory[]>(categoriesData);
 // Use the hash scroll composable
 useHashScroll();
 
-// This will run every time the People component is mounted
-onMounted(() => {
-  console.log('People component mounted');
-});
 </script>
+<style scoped lang="scss">
+@use '../styles/vars';
+@use '../styles/breakpoints' as *;
+
+section#people-section {
+    background: white;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    color: black;
+    padding: 24px 32px;
+    margin-top: 150px;
+
+    @media (max-width: $tablet) {
+        width: calc(100% - 80px);
+        margin-left: 80px;
+        padding: 20px 24px;
+    }
+
+    @media (max-width: $mobile) {
+        width: calc(100% - 16px);
+        margin-left: 16px;
+        padding: 16px 20px;
+    }
+
+    h1.subheader {
+        margin-bottom: 96px;
+    }
+
+}   
+</style>

@@ -74,31 +74,6 @@ body.mobile-menu-open .view-container * {
         background-position: -725px -500px;
     }
 }
-.main-visual-2 {
-    position: absolute;
-    width: 100vw;
-    max-width: 2770px;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    max-width: 2770px;
-    height: 100%;
-    transform: translateZ(0);
-}
-
-.main-visual-3 {
-    position: absolute;
-    width: 100vw;
-    max-width: 2770px;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    z-index: 12;
-    max-width: 2770px;
-    height: 100%;
-    transform: translateZ(0);
-}
 
 .nav-container {
     position: fixed;
@@ -163,126 +138,6 @@ nav {
         }
     }
 
-    .desktop-nav-menu {
-        position: relative;
-        display: flex;
-        align-items: center;
-
-        a {
-            color: white;
-            font-size: 16px;
-            margin: 0 8px;
-            text-decoration: none;
-            position: relative;
-            padding: 4px 16px;
-            margin: 0;
-            transition: color 0.3s ease;
-    
-            &:hover {
-                color: vars.$accent;
-            }
-        }
-    }
-
-    .links {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    .link-container {
-        padding-bottom: 32px;
-    }
-
-    .link-container.extendible {
-
-        span::after {
-            content: "+";
-            margin-left: 4px;
-            transition: content 0.3s ease;
-        }
-
-        &:hover {
-            .sub-menu-container {
-                transform: translateX(0);
-            }
-
-            a {
-                color: vars.$accent;
-    
-                span::after {
-                    content: "−";
-                }
-            }
-
-        }
-
-        .sub-menu-container {
-            position: absolute;
-            top: calc(100% - 32px);
-            right: 16px;
-            transform: translateX(calc(100% + 109px));
-            transition: transform 0.3s linear;
-            z-index: 10;
-            padding: 16px 0 40px 40px;
-            
-            &:hover {
-                transform: translateX(0);
-            }
-        }
-        
-        .sub-menu {
-            display: flex;
-            background: vars.$accent;
-            color: #000;
-
-            a {
-                display: block;
-                color: #000;
-                text-transform: uppercase;
-                padding: 4px 24px;
-                margin: 0;
-                font-size: 14px;
-                font-weight: 500;
-                white-space: nowrap;
-                transition: all 0.3s ease;
-                position: relative;
-
-                &::before,
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    height: 2px;
-                    background-color: vars.$accent;
-                    transition: transform 0.3s ease;
-                }
-                
-                &::before {
-                    top: 0;
-                    transform: translateY(0);
-                }
-                
-                &::after {
-                    bottom: 0;
-                    transform: translateY(0);
-                }
-
-                &:hover {
-                    color: #000;
-                    
-                    &::before {
-                        transform: translateY(-6px);
-                    }
-                    
-                    &::after {
-                        transform: translateY(6px);
-                    }
-                }
-            }
-        }
-    }
 
 }
 
@@ -295,86 +150,16 @@ nav {
     position: relative;
     z-index: 2;
 
-    section {
-        width: 100%;
-        margin: 0 auto;
-    }
 }
 
+section {
+    width: 100%;
+    margin: 0 auto;
+}
 .footer-visual {
     height: 280px;
 }
 
-footer {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    background-image: url('/footer-bg.png');
-    background-position: bottom center;
-    background-repeat: repeat-x;
-    background-size: 1920px 720px;
-    padding: 0 24px;
-
-    h2 {
-        margin: 0 0 24px 0;
-
-        @media (max-width: $mobile) {
-            font-size: 18px;
-        }
-    }
-
-    .footer-section {
-        max-width: 1600px;
-        margin: 0 auto;
-
-        &:not(:first-child) {
-            margin-top: 56px;
-        }
-
-        .logo-container-left-aligned {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 48px;
-
-            > * {
-                flex: 0 0 auto;
-            }
-        }
-    }
-
-    .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 200px 0 24px;
-        font-size: 12px;
-
-        a {
-            text-decoration: underline;
-        }
-    }
-
-    .contact-container {
-        display: flex;
-        flex-direction: column;
-        margin-top: 280px;
-
-        @media (max-width: $tablet) {
-            margin-top: 200px;
-        }
-
-        @media (max-width: $mobile) {
-            margin-top: 150px;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-    }
-}
 
 h1.intro {
     font-size: 64px;
@@ -407,19 +192,6 @@ h3 {
     font-weight: 500;
 }
 
-h3.image-overlay-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: white;
-    opacity: 0.4;
-    margin: 0 2px;
-    font-size: 40px;
-    font-weight: 450;
-    text-transform: uppercase;
-    z-index: 1;
-}
-
 h4 {
     font-size: 17px;
     font-weight: 400;
@@ -435,38 +207,11 @@ img {
 }
 
 /* Flexbox Utility Classes */
-.flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.flex-center-horizontal {
-    display: flex;
-    justify-content: center;
-}
-
-.flex-center-vertical {
-    display: flex;
-    align-items: center;
-}
 
 .flex-center-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.flex-center-column-horizontal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.flex-center-column-vertical {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 

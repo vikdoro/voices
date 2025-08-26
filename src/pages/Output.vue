@@ -32,24 +32,46 @@
 </template>
  
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import ContentCategory from '../components/ContentCategory.vue';
 import ContentCard from '../components/ContentCard.vue';
 import categoriesData from '../data/output/output.json';
 import type { OutputCategory } from '../types';
-import { scrollToSection } from '../utils/scroll';
 import { useHashScroll } from '../composables/useHashScroll';
 
 const categories = ref<OutputCategory[]>(categoriesData);
 
 // Use the hash scroll composable
 useHashScroll();
-
-// This will run every time the Output component is mounted
-onMounted(() => {
-  console.log('Output component mounted');
-});
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@use '../styles/vars';
+@use '../styles/breakpoints' as *;
+
+section.output-section {
+    background: white;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    color: black;
+    padding: 24px 32px;
+    margin-top: 150px;
+
+    @media (max-width: $tablet) {
+        width: calc(100% - 80px);
+        margin-left: 80px;
+        padding: 20px 24px;
+    }
+
+    @media (max-width: $mobile) {
+        width: calc(100% - 16px);
+        margin-left: 16px;
+        padding: 16px 20px;
+    }
+
+    h1.subheader {
+        margin-bottom: 96px;
+    }
+
+}    
 </style>

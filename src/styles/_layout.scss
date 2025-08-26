@@ -1,8 +1,0 @@
-@use 'vars';
-
-@mixin card {
-  border: 1px solid vars.$border;
-  padding: vars.$pad;
-  border-radius: vars.$radius;
-  margin: .5rem 0;
-}

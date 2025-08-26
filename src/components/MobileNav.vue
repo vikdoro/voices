@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 
-                <RouterLink to="/about" class="mobile-nav-link" @click="closeMenu">Contact</RouterLink>
+                <RouterLink to="/contact" class="mobile-nav-link" @click="closeMenu">Contact</RouterLink>
             </nav>
             <div class="mobile-menu-footer">
                 <img src="/institutions/C2DH.svg" alt="Luxembourg Centre for Contemporary and Digital History" class="institution-logo">

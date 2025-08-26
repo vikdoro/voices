@@ -10,34 +10,13 @@
     </div>
          <div class="view-container">
             <img src="/glasses/glass-1.png" alt="Broken glass" class="glass-1">
+            <img src="/glasses/glass-2.png" alt="Broken glass" class="glass-2">
             <img src="/glasses/glass-3.png" alt="Broken glass" class="glass-3">
             <img src="/glasses/glass-4.png" alt="Broken glass" class="glass-4">
             <img src="/glasses/glass-5.png" alt="Broken glass" class="glass-5">
-
-            <img src="/glasses/glass-2.png" alt="Broken glass" class="glass-2">
             <img src="/glasses/glass-6.png" alt="Broken glass" class="glass-6">
             <img src="/glasses/glass-7.png" alt="Broken glass" class="glass-7">
-         <div class="main-visual">
-            <!-- <div class="glass-layer">
-                <img src="/glasses/glass-1.png" alt="Broken glass" class="glass-1">
-                <img src="/glasses/glass-2.png" alt="Broken glass" class="glass-2">
-                <img src="/glasses/glass-3.png" alt="Broken glass" class="glass-3">
-                <img src="/glasses/glass-4.png" alt="Broken glass" class="glass-4">
-                <img src="/glasses/glass-5.png" alt="Broken glass" class="glass-5">
-                <img src="/glasses/glass-6.png" alt="Broken glass" class="glass-6">
-                <img src="/glasses/glass-7.png" alt="Broken glass" class="glass-7">
-            </div> -->
-         </div>
-        <!-- <div class="main-visual-2">
-            <div class="glass-layer">
-                
-            </div>
-        </div> -->
-        <!-- <div class="main-visual-3">
-            <div class="glass-layer">
-
-            </div>
-        </div> -->
+         <div class="main-visual"></div>
 
          <main id="view">
              <RouterView />
@@ -73,7 +52,7 @@
             </div>
             <div class="footer-bottom">
                 <div>Copyright Université du Luxembourg {{ new Date().getFullYear() }}. All rights reserved</div>
-                <a href="#">Legal notice</a>
+                <!-- <a href="#">Legal notice</a> -->
             </div>
         </footer>
 
@@ -81,16 +60,85 @@
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
-import { onMounted, onUnmounted } from 'vue';
 import DesktopNav from './components/DesktopNav.vue';
 import MobileNav from './components/MobileNav.vue';
 
-// This will only run once when the Layout component is mounted
-onMounted(() => {
-  console.log('Layout component mounted');
-});
-
-onUnmounted(() => {
-  console.log('Layout component unmounted');
-});
 </script>
+
+<style scoped lang="scss">
+@use './styles/vars';
+@use './styles/breakpoints' as *;
+
+footer {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-image: url('/footer-bg.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    background-size: 1920px 720px;
+    padding: 0 24px;
+
+    h2 {
+        margin: 0 0 24px 0;
+
+        @media (max-width: $mobile) {
+            font-size: 18px;
+        }
+    }
+
+    .footer-section {
+        max-width: 1600px;
+        margin: 0 auto;
+
+        &:not(:first-child) {
+            margin-top: 56px;
+        }
+
+        .logo-container-left-aligned {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 48px;
+
+            > * {
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 200px 0 24px;
+        font-size: 12px;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 280px;
+
+        @media (max-width: $tablet) {
+            margin-top: 200px;
+        }
+
+        @media (max-width: $mobile) {
+            margin-top: 150px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    }
+}
+
+
+</style>

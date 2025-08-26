@@ -14,7 +14,18 @@ defineProps<{
 }>();
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@use '../styles/vars';
+@use '../styles/breakpoints' as *;
+
+.content-category {
+    @media (max-width: $mobile) {
+        h2 {
+            font-size: 18px;
+        }
+    }
+}
+
 .content-container {
     display: flex;
     flex-wrap: wrap;

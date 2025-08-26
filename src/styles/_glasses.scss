@@ -109,6 +109,11 @@ img.glass-6 {
     left: 25px;
     width: 259px;
     z-index: 3;
+
+    @media (max-width: $xxlarge-desktop) {
+        left: 0px;
+        width: 196px;
+    }
     
     @media (max-width: $xlarge-desktop) {
         left: -8px;
@@ -130,12 +135,11 @@ img.glass-6 {
     }
 
     @media (max-width: $mobile) {
-        top: 1500px;
+        top: 1565px;
         width: 124px;
     }
 
     @media (max-width: $small-mobile) {
-        top: 1560px;
         width: 124px;
     }
 }
@@ -161,17 +165,5 @@ img.glass-7 {
     @media (max-width: $mobile) {
         width: 178px;
         left: 180px;
-    }
-}
-
-
-.main-visual-2, .main-visual-3 {
-    .glass-layer {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        max-width: 100vw;
-        overflow: hidden;
-
     }
 }

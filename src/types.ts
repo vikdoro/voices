@@ -9,7 +9,8 @@ export interface OutputCategory {
 export interface OutputItem {
     title: string;
     link?: string;
-    type?: string;
+    deliveryMode?: string;
+    dateTag?: string;
     image?: string;
     location?: string;
     authors?: string;
@@ -31,12 +32,14 @@ export interface PeopleItem {
 }
 
 export interface OutputCardContent {
-    imageFolder?: string;
-    link?: string;
-    image?: string;
-    label?: string;
     title: string;
     description?: string;
+    link?: string;
+    imageFolder?: string;
+    image?: string;
+    dateTag?: string;
+    location?: string;
+    label?: string;
     authors?: string;
     organisations?: string;
 }

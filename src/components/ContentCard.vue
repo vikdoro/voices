@@ -2,11 +2,16 @@
 <a :href="link" class="content-card" :class="{ 'no-link': !link }" target="_blank">
     <div v-if="imageFolder && image" class="content-card-image-container">
         <img :src="`/data/${imageFolder}/images/${image}`" alt="link illustration" class="content-card-image">
+        <div v-if="dateTag" class="image-overlay-tag" :class="{ 'highlighted-date-tag': dateTag === 'In progress' }">{{ dateTag }}</div>
     </div>
-    <div v-if="label" class="content-card-label">{{ label }}</div>
+    <div class="labels-above-title">
+        <div v-if="label" class="content-card-label">{{ label }}</div>
+        <div v-if="location" class="content-card-location">{{ location }}</div>
+    </div>
     <h3>{{ title }}</h3>
     <h4 v-if="description">{{ description }}</h4>
     <div v-if="authors" class="content-card-authors">{{ authors }}</div>
+    <hr v-if="authors && organisations" />
     <div v-if="organisations" class="content-card-organisations">{{ organisations }}</div>
     <div class="content-card-frame">
         <img src="/icons/content-card-corner.svg" alt="content-card-corner" class="content-card-corner-top">
@@ -71,6 +76,37 @@ defineProps<OutputCardContent>();
         }
     }
 
+    .labels-above-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+
+        .content-card-label {
+            display: inline-block;
+            padding: 4px 8px;
+            border: 1px solid #000;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+
+            
+        }
+
+        .content-card-location {
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+    }
+
+    .content-card-organisations {
+        font-size: 14px;
+    }
+
     &.no-link {
         .content-card-arrow {
             display: none;
@@ -102,13 +138,24 @@ defineProps<OutputCardContent>();
     .content-card-image-container {
         width: 100%;
         overflow: hidden;
+        position: relative;
 
-        @media (max-width: $tablet) {
+        .image-overlay-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #000;
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            
+            // Style for "In progress" tag
+            &.highlighted-date-tag {
+                background-color: vars.$in_progress;
+                color: #fff;
+            }
         }
-
-        @media (max-width: $mobile) {
-        }
-
         .content-card-image {
             width: 100%;
             height: 100%;
@@ -118,21 +165,17 @@ defineProps<OutputCardContent>();
         }
     }
 
-    .content-card-label {
-        display: inline-block;
-        padding: 4px 8px;
-        border: 1px solid #000;
-        margin-top: 8px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
     h3 {
         margin: 16px 0;
     }
 
     h4 {
         margin-bottom: 0;
+    }
+
+    hr {
+        margin: 8px 0;
+        border-top: 1px solid #000;
     }
 }
 

@@ -18,11 +18,13 @@
         <ContentCard
                 v-for="item in category.items"
                 :key="item.title"
-                :label="item.type"
                 :title="item.title"
+                :label="item.deliveryMode"
+                :link="item.link"
                 imageFolder="output"
                 :image="item.image"
-                :link="item.link"
+                :dateTag="item.dateTag"
+                :location="item.location"
                 :authors="item.authors"
                 :organisations="item.organisations"
             />

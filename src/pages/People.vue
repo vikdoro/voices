@@ -31,7 +31,7 @@
 import { ref } from 'vue';
 import ContentCategory from '../components/ContentCategory.vue';
 import ContentCard from '../components/ContentCard.vue';
-import categoriesData from '../data/people/people.json';
+import categoriesData from '../assets/data/people/people.json';
 import type { PeopleCategory } from '../types';
 import { useHashScroll } from '../composables/useHashScroll';
 

@@ -1,7 +1,13 @@
 <template>
 <a :href="link" class="content-card" :class="{ 'no-link': !link }" target="_blank">
     <div v-if="imageFolder && image" class="content-card-image-container">
-        <img :src="`/data/${imageFolder}/images/${image}`" alt="link illustration" class="content-card-image">
+        <ResponsivePicture 
+            :base-path="`data/${imageFolder}/images/${image.replace(/\.[^/.]+$/, '')}`"
+            alt="link illustration"
+            class="content-card-image"
+            :dimensions="[1221, 814, 407, 738, 512, 246]"
+            sizes="407px"
+        />
         <div v-if="dateTag" class="image-overlay-tag" :class="{ 'highlighted-date-tag': dateTag === 'In progress' }">{{ dateTag }}</div>
     </div>
     <div class="labels-above-title">
@@ -26,8 +32,9 @@
 
 <script setup lang="ts">
 import type { OutputCardContent } from '../types';
+import ResponsivePicture from './ResponsivePicture.vue';
 
-defineProps<OutputCardContent>();
+const props = defineProps<OutputCardContent>();
 </script>
 
 <style scoped lang="scss">
@@ -91,8 +98,6 @@ defineProps<OutputCardContent>();
             font-size: 14px;
             font-weight: 500;
             white-space: nowrap;
-
-            
         }
 
         .content-card-location {

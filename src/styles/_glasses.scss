@@ -7,7 +7,7 @@ img.glass-1 {
     width: 608px;
     z-index: 1;
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         width: 526px;
         left: 749px;
     }
@@ -30,11 +30,11 @@ img.glass-2 {
     width: 329px;
     z-index: 3;
 
-    @media (max-width: $xlarge-desktop) {
+    @media (max-width: $large-desktop) {
         left: 1181px;
     }
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         left: 1051px;
     }
 
@@ -53,11 +53,11 @@ img.glass-3 {
     width: 283px;
     z-index: 1;
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         left: 633px;
     }
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         top: 75px;
         width: 253px;
     }
@@ -90,7 +90,7 @@ img.glass-5 {
     width: 449px;
     z-index: 1;
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         top: 840px;
         left: 1036px;
         width: 409px;
@@ -110,17 +110,17 @@ img.glass-6 {
     width: 259px;
     z-index: 3;
 
-    @media (max-width: $xxlarge-desktop) {
+    @media (max-width: $xlarge-desktop) {
         left: 0px;
         width: 196px;
     }
     
-    @media (max-width: $xlarge-desktop) {
+    @media (max-width: $large-desktop) {
         left: -8px;
         width: 185px;
     }
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         top: 1528px;
         width: 174px;
     }
@@ -151,10 +151,10 @@ img.glass-7 {
     width: 298px;
     z-index: 1;
 
-    @media (max-width: $xlarge-desktop) {
+    @media (max-width: $large-desktop) {
         left: 1095px;
     }
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         left: 995px;
     }
     @media (max-width: $tablet) {

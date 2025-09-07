@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 
-                <RouterLink to="/contact" class="mobile-nav-link" @click="closeMenu">Contact</RouterLink>
+                <button @click="scrollToContact" class="mobile-nav-link">Contact</button>
             </nav>
             <div class="mobile-menu-footer">
                 <img src="/institutions/C2DH.svg" alt="Luxembourg Centre for Contemporary and Digital History" class="institution-logo">
@@ -69,6 +69,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import { scrollToSection } from '../utils/scroll';
 
 const isMenuOpen = ref(false);
 const expandedSections = ref({
@@ -96,6 +97,11 @@ const closeMenu = () => {
 
 const toggleSection = (section: keyof typeof expandedSections.value) => {
     expandedSections.value[section] = !expandedSections.value[section];
+};
+
+const scrollToContact = () => {
+    scrollToSection('contact-container');
+    closeMenu();
 };
 </script>
 
@@ -142,7 +148,7 @@ const toggleSection = (section: keyof typeof expandedSections.value) => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('/mobile-menu-bg@1x.jpg');
+    background-image: url('../assets/background/mobile-menu-bg@1x.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
@@ -260,6 +266,14 @@ nav.mobile-nav-links {
     color: #fff;
     text-decoration: none;
     transition: background 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+    padding: 0;
 }
 
 .sub-link-container {

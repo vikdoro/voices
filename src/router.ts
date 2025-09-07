@@ -5,7 +5,6 @@ import Layout from './Layout.vue';
 const Home = () => import('./pages/Home.vue');
 const People = () => import('./pages/People.vue');
 const Output = () => import('./pages/Output.vue');
-const Contact = () => import('./pages/Contact.vue');
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,7 +16,6 @@ const router = createRouter({
         { path: '', name: 'home', component: Home },
         { path: 'people', name: 'people', component: People },
         { path: 'output', name: 'output', component: Output },
-        { path: 'contact', name: 'contact', component: Contact },
       ]
     }
   ],

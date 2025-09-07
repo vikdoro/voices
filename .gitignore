@@ -35,3 +35,7 @@ coverage
 !.dev.vars.example
 .env*
 !.env.example
+
+# image conversion
+scripts/image-conversion/input
+scripts/image-conversion/output

@@ -37,7 +37,7 @@
 import { ref } from 'vue';
 import ContentCategory from '../components/ContentCategory.vue';
 import ContentCard from '../components/ContentCard.vue';
-import categoriesData from '../data/output/output.json';
+import categoriesData from '../assets/data/output/output.json';
 import type { OutputCategory } from '../types';
 import { useHashScroll } from '../composables/useHashScroll';
 

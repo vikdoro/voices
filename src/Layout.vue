@@ -9,13 +9,13 @@
         </nav>
     </div>
          <div class="view-container">
-            <img src="/glasses/glass-1.png" alt="Broken glass" class="glass-1">
-            <img src="/glasses/glass-2.png" alt="Broken glass" class="glass-2">
-            <img src="/glasses/glass-3.png" alt="Broken glass" class="glass-3">
-            <img src="/glasses/glass-4.png" alt="Broken glass" class="glass-4">
-            <img src="/glasses/glass-5.png" alt="Broken glass" class="glass-5">
-            <img src="/glasses/glass-6.png" alt="Broken glass" class="glass-6">
-            <img src="/glasses/glass-7.png" alt="Broken glass" class="glass-7">
+            <ResponsivePicture basePath="glasses/glass-1" alt="Broken glass" class="glass-1" :dimensions="multiplyDimensions([346, 608])" sizes="608px"/>
+            <ResponsivePicture basePath="glasses/glass-2" alt="Broken glass" class="glass-2" :dimensions="multiplyDimensions([170, 283])" sizes="283px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses/glass-3" alt="Broken glass" class="glass-3" :dimensions="multiplyDimensions([153, 329])" sizes="329px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses/glass-4" alt="Broken glass" class="glass-4" :dimensions="multiplyDimensions([100, 138])" sizes="138px"/>
+            <ResponsivePicture basePath="glasses/glass-5" alt="Broken glass" class="glass-5" :dimensions="multiplyDimensions([203, 449])" sizes="449px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses/glass-6" alt="Broken glass" class="glass-6" :dimensions="multiplyDimensions([174, 259])" sizes="259px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses/glass-7" alt="Broken glass" class="glass-7" :dimensions="multiplyDimensions([178, 298])" sizes="298px" fetchpriority="low"/>
          <div class="main-visual"></div>
 
          <main id="view">
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="footer-section">
-                <div class="contact-container">
+                <div id="contact-container">
                     <h2>Contact</h2>
                     <a href="mailto:univestity@uni.lu">email: univestity@uni.lu</a>
                 </div>
@@ -62,6 +62,8 @@
 import { RouterView } from 'vue-router';
 import DesktopNav from './components/DesktopNav.vue';
 import MobileNav from './components/MobileNav.vue';
+import ResponsivePicture from './components/ResponsivePicture.vue';
+import { multiplyDimensions } from './utils/utils';
 
 </script>
 
@@ -73,7 +75,7 @@ footer {
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    background-image: url('/footer-bg.png');
+    background-image: url('/assets/background/footer-bg.png');
     background-position: bottom center;
     background-repeat: repeat-x;
     background-size: 1920px 720px;
@@ -119,7 +121,7 @@ footer {
         }
     }
 
-    .contact-container {
+    #contact-container {
         display: flex;
         flex-direction: column;
         margin-top: 280px;

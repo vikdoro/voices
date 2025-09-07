@@ -1,7 +1,13 @@
 <template>
     <a :href="`/output#${slug}`" class="home-output-item alternating-flex-layout">
         <div class="relative flex-fill-half">
-            <img :src="`../data/output/images/${coverImage}`" class="home-output-image" :alt="title">
+            <ResponsivePicture 
+                :base-path="`home-output-images/${coverImage.replace(/\.[^/.]+$/, '')}`" 
+                class="home-output-image" 
+                :alt="title"
+                :dimensions="multiplyDimensions([378, 489, 600])"
+                sizes="600px"
+            />
             <div class="home-output-image-gradient-overlay"></div>
             <h3 class="image-overlay-title">{{ title }}</h3>
         </div>
@@ -13,6 +19,9 @@
 </template>
 
 <script setup lang="ts">
+import { multiplyDimensions } from '@/utils/utils';
+import ResponsivePicture from './ResponsivePicture.vue';
+
 const props = defineProps<{
     title: string;
     description: string;

@@ -42,7 +42,7 @@ body.mobile-menu-open .view-container * {
     background-position: -245px -500px;
     transition: background-position 0.5s ease-in-out;
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         background-position: -445px -500px;
         padding-top: 100px;
     }
@@ -63,15 +63,32 @@ body.mobile-menu-open .view-container * {
     // width: calc(100vw + 490px);
     max-width: 2770px;
     height: 100%;
-    background-image: url('/bg@1x.jpg');
+    background-image: image-set(
+        '../assets/background/bg.webp' 1x,
+        '../assets/background/bg@2x.webp' 2x,
+        '../assets/background/bg@3x.webp' 3x
+    );
     background-repeat: no-repeat;
-    background-position: -240px -500px;
     background-size: 3003px auto;
     transition: background-position 0.5s ease-in-out;
     transform: translateZ(0);
 
-    @media (max-width: $large-desktop) {
-        background-position: -725px -500px;
+    @media (max-width: $desktop) {
+        background-image: image-set(
+            '../assets/background/bg-s.webp' 1x,
+            '../assets/background/bg-s@2x.webp' 2x,
+            '../assets/background/bg-s@3x.webp' 3x
+        );
+        background-size: 1330px auto;
+    }
+
+    @media (max-width: $mobile) {
+        background-image: image-set(
+            '../assets/background/bg-xs.webp' 1x,
+            '../assets/background/bg-xs@2x.webp' 2x,
+            '../assets/background/bg-xs@3x.webp' 3x
+        );
+        background-size: 780px auto;
     }
 }
 

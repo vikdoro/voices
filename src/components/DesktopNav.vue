@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="link-container">
-                <RouterLink to="/contact">Contact</RouterLink>
+                <button @click="scrollToContact">Contact</button>
             </div>
         </div>
     </div>
@@ -37,6 +37,9 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
+import { scrollToSection } from '../utils/scroll';
+
+const scrollToContact = () => scrollToSection('contact-container');
 </script>
 
 <style scoped lang="scss">
@@ -54,7 +57,7 @@ import { RouterLink } from 'vue-router';
         align-items: center;
     }
 
-    a {
+    a, button {
         color: white;
         font-size: 16px;
         margin: 0 8px;
@@ -63,6 +66,9 @@ import { RouterLink } from 'vue-router';
         padding: 4px 16px;
         margin: 0;
         transition: color 0.3s ease;
+        background: none;
+        border: none;
+        cursor: pointer;
 
         &:hover {
             color: vars.$accent;

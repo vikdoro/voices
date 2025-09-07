@@ -83,7 +83,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import HomeOutputItem from '../components/HomeOutputItem.vue';
-import outputData from '../data/output/output.json';
+import outputData from '../assets/data/output/output.json';
 import { scrollToSection } from '../utils/scroll';
 import { useHashScroll } from '../composables/useHashScroll';
 
@@ -130,7 +130,7 @@ section.home-section {
     display: block;
     padding: 273px 0 0 218px;
 
-    @media (max-width: $large-desktop) {
+    @media (max-width: $desktop) {
         padding: 264px 0 0 96px;
     }
 
@@ -142,7 +142,7 @@ section.home-section {
     h1.intro {
         margin: 0 0 32px;
 
-        @media (max-width: $large-desktop) {
+        @media (max-width: $desktop) {
             max-width: 480px;
             line-height: 62px;
             margin-bottom: 24px;
@@ -158,7 +158,7 @@ section.home-section {
         max-width: 800px;
         margin: 0 0 48px;
 
-        @media (max-width: $large-desktop) {
+        @media (max-width: $desktop) {
             margin-bottom: 40px;
         }
 

@@ -20,7 +20,7 @@ const removeAlpha = false;
 // glass 5
 // const widths = [203, 449];
 // glass 6
-const widths = [174, 259];
+// const widths = [174, 259];
 // glass 7
 // const widths = [178, 298];
 
@@ -32,6 +32,9 @@ const widths = [174, 259];
 
 // output images people page
 // const widths = [378, 489, 600];
+
+// background-s
+// const widths = [1333];
 
 const files = globSync(patterns, {
   cwd: inputDir,

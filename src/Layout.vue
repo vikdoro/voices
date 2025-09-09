@@ -8,7 +8,8 @@
             <MobileNav />
         </nav>
     </div>
-         <div class="view-container">
+    <div class="view-container">
+        <div class="glass-container">
             <ResponsivePicture basePath="glasses/glass-1" alt="Broken glass" class="glass-1" :dimensions="multiplyDimensions([346, 608])" sizes="608px"/>
             <ResponsivePicture basePath="glasses/glass-2" alt="Broken glass" class="glass-2" :dimensions="multiplyDimensions([170, 283])" sizes="283px" fetchpriority="high"/>
             <ResponsivePicture basePath="glasses/glass-3" alt="Broken glass" class="glass-3" :dimensions="multiplyDimensions([153, 329])" sizes="329px" fetchpriority="high"/>
@@ -16,12 +17,13 @@
             <ResponsivePicture basePath="glasses/glass-5" alt="Broken glass" class="glass-5" :dimensions="multiplyDimensions([203, 449])" sizes="449px" fetchpriority="low"/>
             <ResponsivePicture basePath="glasses/glass-6" alt="Broken glass" class="glass-6" :dimensions="multiplyDimensions([174, 259])" sizes="259px" fetchpriority="low"/>
             <ResponsivePicture basePath="glasses/glass-7" alt="Broken glass" class="glass-7" :dimensions="multiplyDimensions([178, 298])" sizes="298px" fetchpriority="low"/>
-         <div class="main-visual"></div>
+        </div>
+        <div class="main-visual"></div>
 
-         <main id="view">
-             <RouterView />
-         </main>
-     </div>
+        <main id="view">
+            <RouterView />
+        </main>
+    </div>
     <div class="footer-visual"></div>
         <footer>
             <div class="footer-section">
@@ -72,14 +74,13 @@ import { multiplyDimensions } from './utils/utils';
 @use './styles/breakpoints' as *;
 
 footer {
-    width: 100%;
-    max-width: 1920px;
+    width: calc(100% - 48px);
+    max-width: 1200px;
     margin: 0 auto;
     background-image: url('/assets/background/footer-bg.png');
     background-position: bottom center;
     background-repeat: repeat-x;
     background-size: 1920px 720px;
-    padding: 0 24px;
 
     h2 {
         margin: 0 0 24px 0;

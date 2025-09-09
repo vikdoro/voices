@@ -2,18 +2,17 @@
 
 img.glass-1 {
     position: absolute;
-    top: 610px;
-    left: 873px;
+    top: 683px;
+    left: 916px;
     width: 608px;
     z-index: 1;
 
     @media (max-width: $desktop) {
-        width: 526px;
-        left: 749px;
+        top: 613px;
+        left: 603px;
     }
 
     @media (max-width: $tablet) {
-        left: 625px;
     }
 
     @media (max-width: $mobile) {
@@ -25,17 +24,20 @@ img.glass-1 {
 
 img.glass-2 {
     position: absolute;
-    top: 123px;
-    left: 1247px;
-    width: 329px;
+    top: 138px;
+    left: 1432px;
+    width: 365px;
     z-index: 3;
 
     @media (max-width: $large-desktop) {
-        left: 1181px;
+        left: auto;
+        right: -120px;
     }
 
     @media (max-width: $desktop) {
-        left: 1051px;
+        top: 117px;
+        left: 995px;
+        right: auto;
     }
 
     @media (max-width: $mobile) {
@@ -58,8 +60,9 @@ img.glass-3 {
     }
 
     @media (max-width: $desktop) {
-        top: 75px;
-        width: 253px;
+        top: 28px;
+        left: 587px;
+
     }
 
     @media (max-width: $mobile) {
@@ -70,10 +73,15 @@ img.glass-3 {
 
 img.glass-4 {
     position: absolute;
-    top: 810px;
-    left: 110px;
+    top: 904px;
+    left: 526px;
     width: 138px;
     z-index: 1;
+
+    @media (max-width: $desktop) {
+        top: 822px;
+        left: 186px;
+    }
 
     @media (max-width: $mobile) {
         top: 780px;
@@ -85,8 +93,8 @@ img.glass-4 {
 
 img.glass-5 {
     position: absolute;
-    top: 875px;
-    left: 1516px;
+    top: 896px;
+    left: 1716px;
     width: 449px;
     z-index: 1;
 
@@ -106,22 +114,22 @@ img.glass-5 {
 img.glass-6 {
     position: absolute;
     top: 1400px;
+    top: calc(100vh + 210px);
     left: 25px;
     width: 259px;
     z-index: 3;
 
     @media (max-width: $xlarge-desktop) {
-        left: 0px;
         width: 196px;
     }
     
     @media (max-width: $large-desktop) {
-        left: -8px;
+        left: -16px;
         width: 185px;
     }
 
     @media (max-width: $desktop) {
-        top: 1528px;
+        left: -100px;
         width: 174px;
     }
 
@@ -146,10 +154,10 @@ img.glass-6 {
 
 img.glass-7 {
     position: absolute;
-    bottom: -205px;
-    left: 1149px;
+    bottom: -98px;
+    left: 1400px;
     width: 298px;
-    z-index: 1;
+    z-index: 3;
 
     @media (max-width: $large-desktop) {
         left: 1095px;

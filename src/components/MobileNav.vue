@@ -144,7 +144,6 @@ const scrollToContact = () => {
     left: 100vw;
     width: 100vw;   
     height: 100vh;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -177,6 +176,7 @@ const scrollToContact = () => {
 .mobile-menu.active {
     left: 0;
     opacity: 1;
+    display: flex;
 
     .logo-link {
         opacity: 1;

@@ -1,5 +1,5 @@
 <template>
-    <section id="people-section">
+    <section id="people-section" class="white-background">
         <header>
             <h1 class="intro">People</h1>
             <h1 class="subheader">
@@ -45,29 +45,4 @@ useHashScroll();
 @use '../styles/vars';
 @use '../styles/breakpoints' as *;
 
-section#people-section {
-    background: white;
-    margin-left: 150px;
-    width: calc(100% - 150px);
-    color: black;
-    padding: 24px 32px;
-    margin-top: 150px;
-
-    @media (max-width: $tablet) {
-        width: calc(100% - 80px);
-        margin-left: 80px;
-        padding: 20px 24px;
-    }
-
-    @media (max-width: $mobile) {
-        width: calc(100% - 16px);
-        margin-left: 16px;
-        padding: 16px 20px;
-    }
-
-    h1.subheader {
-        margin-bottom: 96px;
-    }
-
-}   
 </style>

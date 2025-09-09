@@ -23,4 +23,24 @@ export default defineConfig({
 			'@data': fileURLToPath(new URL('./src/data', import.meta.url))
 		},
 	},
+	build: {
+		cssCodeSplit: true,
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					vendor: ['vue', 'vue-router'],
+					styles: ['src/styles/main.scss']
+				},
+				assetFileNames: (assetInfo) => {
+					if (assetInfo.name?.endsWith('.css')) {
+						return 'assets/css/[name]-[hash][extname]'
+					}
+					return 'assets/[name]-[hash][extname]'
+				}
+			}
+		}
+	},
+	css: {
+		devSourcemap: true
+	}
 })

@@ -1,55 +1,17 @@
 @use 'vars';
 @use 'breakpoints' as *;
 
-/* Reset and base styles */
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-}
 
-body {
-    min-height: 100vh;
-    font-family: 'ClashDisplay-Variable', sans-serif;
-    font-weight: 400;
-    color: white;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 
 * {
     box-sizing: border-box;
+    font-family: 'ClashDisplay-Variable', sans-serif;
 }
 
 body.mobile-menu-open .view-container * {
     color: transparent !important;
     text-shadow: none !important;
-}
-
-.view-container {
-    position: relative;
-    width: 100%;
-    max-width: 1920px;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding-top: 128px;
-    z-index: 1;
-    background-repeat: no-repeat;
-    background-position: -245px -500px;
-    transition: background-position 0.5s ease-in-out;
-
-    @media (max-width: $desktop) {
-        background-position: -445px -500px;
-        padding-top: 100px;
-    }
-
-    @media (max-width: $mobile) {
-        padding-top: 80px;
-    }
 }
 
 .main-visual {
@@ -92,24 +54,6 @@ body.mobile-menu-open .view-container * {
     }
 }
 
-.nav-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 128px;
-    z-index: 3;
-    background: linear-gradient(to top, transparent, black);
-
-    @media (max-width: $desktop) {
-        height: 100px;
-    }
-
-    @media (max-width: $mobile) {
-        height: 80px;
-    }
-}
-
 nav {
     height: 100%;
     width: 100%;
@@ -123,10 +67,10 @@ nav {
     padding: 24px 8px;
     overflow: hidden;
 
-    @media (max-width: $desktop) {
-        padding: 20px 24px;
-        height: 100px;
-    }
+    // @media (max-width: $desktop) {
+    //     padding: 20px 24px;
+    //     height: 100px;
+    // }
 
     @media (max-width: $mobile) {
         align-items: center;
@@ -144,23 +88,21 @@ nav {
         height: 87px;
         display: block;
 
-        @media (max-width: $tablet) {
-            width: 70px;
-            height: 75px;
-        }
+        // @media (max-width: $tablet) {
+        //     width: 70px;
+        //     height: 75px;
+        // }
 
         @media (max-width: $mobile) {
             width: 60px;
             height: 65px;
         }
     }
-
-
 }
 
 #view {
     height: 100%;
-    max-width: 1600px;
+    max-width: 1680px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -173,6 +115,37 @@ section {
     width: 100%;
     margin: 0 auto;
 }
+
+section.white-background {
+    width: calc(100% - 150px);
+    background: white;
+    color: black;
+    padding: 132px 88px 132px 132px;
+    margin-top: 150px;
+    margin-left: 150px;
+
+    @media (max-width: $desktop) {
+        width: calc(100% - 96px);
+        margin-left: 96px;
+        padding: 132px 24px 132px 48px;
+    }
+
+    @media (max-width: $tablet) {
+    }
+
+    @media (max-width: $mobile) {
+        width: calc(100% - 16px);
+        margin-left: 16px;
+        padding: 48px 16px 48px 16px;
+    }
+
+    h1.subheader {
+        width: 70%;
+        margin-bottom: 96px;
+    }
+}
+
+
 .footer-visual {
     height: 280px;
 }
@@ -182,6 +155,7 @@ h1.intro {
     font-size: 64px;
     font-weight: 500;
     text-transform: uppercase;
+    margin: 0 0 32px;
 
     @media (max-width: $mobile) {
         font-size: 40px;
@@ -255,6 +229,6 @@ img {
         url('/fonts/ClashDisplay-Variable.woff') format('woff'),
         url('/fonts/ClashDisplay-Variable.ttf') format('truetype');
     font-weight: 200 700;
-    font-display: swap;
+    font-display: block;
     font-style: normal;
 }

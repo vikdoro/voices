@@ -1,6 +1,6 @@
 <template>
 <div class="output-container">
-    <section class="output-section">
+    <section class="output-section white-background">
         <header>
             <h1 class="intro">Output</h1>
             <h1 class="subheader">
@@ -50,30 +50,4 @@ useHashScroll();
 <style scoped lang="scss">
 @use '../styles/vars';
 @use '../styles/breakpoints' as *;
-
-section.output-section {
-    background: white;
-    margin-left: 150px;
-    width: calc(100% - 150px);
-    color: black;
-    padding: 24px 32px;
-    margin-top: 150px;
-
-    @media (max-width: $tablet) {
-        width: calc(100% - 80px);
-        margin-left: 80px;
-        padding: 20px 24px;
-    }
-
-    @media (max-width: $mobile) {
-        width: calc(100% - 16px);
-        margin-left: 16px;
-        padding: 16px 20px;
-    }
-
-    h1.subheader {
-        margin-bottom: 96px;
-    }
-
-}    
 </style>

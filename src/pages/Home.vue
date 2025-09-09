@@ -107,6 +107,9 @@ const scrollToAbout = () => scrollToSection('about');
 @use '../styles/breakpoints' as *;
 
 .home-container {
+    width: calc(100% - 48px);
+    max-width: 1200px;
+    margin: 0 auto;
     h2 {
         margin: 21px 0;
 
@@ -115,12 +118,8 @@ const scrollToAbout = () => scrollToSection('about');
         }
     }
 
-    @media (max-width: $tablet) {
-        padding: 0 24px;
-    }
-
     @media (max-width: $mobile) {
-        padding: 0 16px;
+        width: calc(100% - 32px);
     }
 }
 
@@ -128,19 +127,15 @@ section.home-section {
     height: calc(100vh - 127px);
     min-height: 1020px;
     display: block;
-    padding: 273px 0 0 218px;
+    padding: 306px 0 0 120px;
 
-    @media (max-width: $desktop) {
-        padding: 264px 0 0 96px;
-    }
 
     @media (max-width: $mobile) {
-        padding: 240px 16px 0;
+        padding: 184px 16px 0;
         min-height: 880px;
     }
 
     h1.intro {
-        margin: 0 0 32px;
 
         @media (max-width: $desktop) {
             max-width: 480px;
@@ -293,7 +288,7 @@ section#about {
     }
 
     .about-content {
-        max-width: 800px;
+        max-width: 915px;
         background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.8) 75%, transparent 100%);
         margin: 0 auto;
         
@@ -308,5 +303,12 @@ section#about {
             }
         }
     }
+}
+
+section#project-output {
+    position: relative;
+    padding-bottom: 132px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 </style>

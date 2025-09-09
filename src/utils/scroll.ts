@@ -35,14 +35,3 @@ export function scrollToSection(id: string, smooth: boolean = true): void {
         history.pushState(null, '', `#${id}`);
     }
 }
-
-/**
- * Simple smooth scroll to an element with the specified ID
- * @param id - The ID of the element to scroll to
- */
-export function scrollToSectionSimple(id: string): void {
-    const el = document.getElementById(id);
-    if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-    }
-}

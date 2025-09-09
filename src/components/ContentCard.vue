@@ -46,9 +46,23 @@ const props = defineProps<OutputCardContent>();
     z-index: 2;
     margin-bottom: 48px;
     max-width: 400px;
+    width: 100%;
     color: #000;
     background-color: transparent;
     padding: 32px 0 32px 32px;
+
+    @media (max-width: $tablet) {
+        .content-card {
+            max-width: 277px;
+            margin-bottom: 32px;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .content-card {
+            margin-bottom: 24px;
+        }
+    }
 
     .content-card-frame {
         position: absolute;
@@ -103,7 +117,6 @@ const props = defineProps<OutputCardContent>();
         .content-card-location {
             font-size: 14px;
             font-weight: 500;
-            white-space: nowrap;
         }
 
     }
@@ -181,19 +194,6 @@ const props = defineProps<OutputCardContent>();
     hr {
         margin: 8px 0;
         border-top: 1px solid #000;
-    }
-}
-
-@media (max-width: $tablet) {
-    .content-card {
-        margin-bottom: 32px;
-    }
-
-}
-
-@media (max-width: $mobile) {
-    .content-card {
-        margin-bottom: 24px;
     }
 }
 

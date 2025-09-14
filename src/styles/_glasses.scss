@@ -11,10 +11,6 @@ img.glass-1 {
         top: 613px;
         left: 603px;
     }
-
-    @media (max-width: $tablet) {
-    }
-
     @media (max-width: $mobile) {
         top: 590px;
         left: 168px;
@@ -105,23 +101,19 @@ img.glass-5 {
     }
 
     @media (max-width: $mobile) {
-        width: 202px;
         top: 867px;
         left: 250px;
+        width: 202px;
     }
 }
 
 img.glass-6 {
     position: absolute;
-    top: 1400px;
     top: calc(100vh + 210px);
     left: 25px;
     width: 259px;
     z-index: 3;
 
-    @media (max-width: $xlarge-desktop) {
-        width: 196px;
-    }
     
     @media (max-width: $large-desktop) {
         left: -16px;
@@ -133,22 +125,9 @@ img.glass-6 {
         width: 174px;
     }
 
-    @media (max-width: $desktop) {
-        width: 174px;
-    }
-
     @media (max-width: $tablet) {
         width: 124px;
         z-index: 1;
-    }
-
-    @media (max-width: $mobile) {
-        top: 1565px;
-        width: 124px;
-    }
-
-    @media (max-width: $small-mobile) {
-        width: 124px;
     }
 }
 

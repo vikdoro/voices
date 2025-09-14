@@ -10,6 +10,7 @@
         />
         <div v-if="dateTag" class="image-overlay-tag" :class="{ 'highlighted-date-tag': dateTag === 'In progress' }">{{ dateTag }}</div>
     </div>
+    <div v-else-if="missingImageText" class="content-card-missing-image-text">{{ missingImageText }}</div>
     <div class="labels-above-title">
         <div v-if="label" class="content-card-label">{{ label }}</div>
         <div v-if="location" class="content-card-location">{{ location }}</div>
@@ -19,6 +20,7 @@
     <div v-if="authors" class="content-card-authors">{{ authors }}</div>
     <hr v-if="authors && organisations" />
     <div v-if="organisations" class="content-card-organisations">{{ organisations }}</div>
+    <div v-if="link" class="content-card-link">{{ linkPath }}</div>
     <div class="content-card-frame">
         <img src="/icons/content-card-corner.svg" alt="content-card-corner" class="content-card-corner-top">
         <div class="fill-container"></div>
@@ -29,14 +31,24 @@
     </div>
 </a>
 </template>
-
 <script setup lang="ts">
+import { computed } from 'vue';
 import type { OutputCardContent } from '../types';
 import ResponsivePicture from './ResponsivePicture.vue';
 
 const props = defineProps<OutputCardContent>();
-</script>
 
+const linkPath = computed(() => {
+    if (!props.link) return '';
+    try {
+        const url = new URL(props.link);
+        return url.pathname;
+    } catch {
+        return props.link;
+    }
+});
+
+</script>
 <style scoped lang="scss">
 @use '../styles/vars';
 @use '../styles/breakpoints' as *;
@@ -125,6 +137,13 @@ const props = defineProps<OutputCardContent>();
         font-size: 14px;
     }
 
+    .content-card-link {
+        font-size: 14px;
+        text-decoration: underline;
+        margin-top: 2px;
+    }
+
+
     &.no-link {
         .content-card-arrow {
             display: none;
@@ -181,6 +200,13 @@ const props = defineProps<OutputCardContent>();
             object-fit: cover;
             object-position: center;
         }
+    }
+
+    .content-card-missing-image-text {
+        background: #424242;
+        color: #fff;
+        padding: 12px;
+        margin-bottom: 16px;
     }
 
     h3 {

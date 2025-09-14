@@ -2,12 +2,13 @@
   {
     "slug": "publications",
     "title": "Publications",
-    "coverImage": "publications",
-    "description": "Our publications cover the Holocaust, computational approaches to history, data science and multimodality.",
+    "coverImage": "image-1-home",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros id diam.",
     "items": [
       {
         "title": "Virtual Holocaust Memory, a book review",
         "deliveryMode": "Digital",
+        "missingImageText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "5 August, 2025"
 
@@ -15,14 +16,14 @@
       {
         "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
         "deliveryMode": "Digital",
-        "image": "image-1.png",
+        "image": "image-1-output.png",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "In progress"
       },
       {
         "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
         "deliveryMode": "Digital",
-        "image": "image-1.png",
+        "image": "image-1-output.png",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "In progress"
       }
@@ -31,14 +32,14 @@
   {
     "slug": "talks-workshops",
     "title": "Talks & Workshops",
-    "coverImage": "talks-workshops",
+    "coverImage": "image-2-home",
     "description": "We often give talks and workshops at venues such as scientific conferences, summer schools, and secondary schools.",
     "items": [
       {
         "title": "Multimodal Time Series Analysis",
         "deliveryMode": "On-site & Online",
         "location": "Digital Humanities Summer Institute, University of Montreal",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "June 2026",
         "authors": "Gabor Mihaly Toth, Mohamed Laib"
       },
@@ -46,7 +47,7 @@
         "title": "Fragments from the Past: the Computational Study of Missing Records",
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -56,7 +57,7 @@
         "title": "Fragments from the Past: the Computational Study of Missing Records",
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -66,7 +67,7 @@
         "title": "Fragments from the Past: the Computational Study of Missing Records",
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -76,7 +77,7 @@
         "title": "Fragments from the Past: the Computational Study of Missing Records",
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -86,7 +87,7 @@
         "title": "Fragments from the Past: the Computational Study of Missing Records",
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -97,13 +98,13 @@
   {
     "slug": "podcasts-webinars",
     "title": "Podcasts & Webinars",
-    "coverImage": "podcasts-webinars",
+    "coverImage": "image-3-home",
     "description": "We are keen to achieve a broader impact; we therefore record a podcast series, as well as online webinars.",
     "items": [
       {
         "title": "Textual Data Processing with LLM in the Humanities",
         "deliveryMode": "Online",
-        "image": "image-3.png",
+        "image": "image-3-output.png",
         "dateTag": "15 May, 2025",
         "authors": "Gabor Mihaly Toth"
       },
@@ -111,7 +112,7 @@
         "title": "Fragments from the Past: the Computational Study of Missing Records",
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "Online",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -122,20 +123,20 @@
   {
     "slug": "digital-memorial",
     "title": "Digital Memorial",
-    "coverImage": "digital-memorial",
+    "coverImage": "image-4-home",
     "description": "Our project aims to develop a digital memorial that presents the multimodal memory of the Auschwitz Camp. This is a work in progress; we aim to launch it in 2027.",
     "items": [
       {
         "title": "Digital Memorial 1",
         "deliveryMode": "Online",
-        "image": "image-4.png",
+        "image": "image-4-output.png",
         "authors": "Gabor Mihaly Toth"
       },
       {
         "title": "Fragments from the Past: the Computational Study of Missing Records",
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "Online",
-        "image": "image-2.png",
+        "image": "image-2-output.png",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",

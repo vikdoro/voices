@@ -28,7 +28,7 @@
 							stroke-linecap="round"
 						/>
 					</svg>
-					<span>START TO UNLOCK</span>
+					<span>START READING</span>
 					<div class="cta-border-bottom">
 						<div class="cta-border-3px-bottom"></div>
 						<div class="cta-border-1px-bottom"></div>
@@ -39,7 +39,6 @@
 
 		<section id="about" class="about-section">
 			<div class="about-content">
-				<h2>About</h2>
 				<p>
 					Rose and Jack came from very different walks of life.
 					However, at some point, their paths crossed; they were both
@@ -63,9 +62,9 @@
 		</section>
 
 		<section id="project-output">
-			<div class="flex-center-column">
+			<!-- <div class="flex-center-column">
 				<h2>Project Output</h2>
-			</div>
+			</div> -->
 			<div class="project-output-content">
 				<HomeOutputItem
 					v-for="item in outputItems"
@@ -77,6 +76,9 @@
 				/>
 			</div>
 		</section>
+        <p class="closing-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.
+        </p>
 	</div>
 </template>
 
@@ -277,15 +279,7 @@ section#about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 0 467px;
-
-    @media (max-width: $tablet) {
-        padding: 128px 0 332px;
-    }
-
-    @media (max-width: $mobile) {
-        padding: 128px 0 232px;
-    }
+    padding: 120px 0 max(10vh, 96px);
 
     .about-content {
         max-width: 915px;
@@ -297,6 +291,7 @@ section#about {
             margin-bottom: 24px;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
+            line-height: 22px;
 
             @media (max-width: $desktop) {
                 font-size: 14px;
@@ -309,6 +304,12 @@ section#project-output {
     position: relative;
     padding-bottom: 132px;
     max-width: 1200px;
+    margin: 0 auto;
+}
+
+.closing-text {
+    max-width: 915px;
+    text-align: center;
     margin: 0 auto;
 }
 </style>

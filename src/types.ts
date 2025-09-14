@@ -15,6 +15,7 @@ export interface OutputItem {
     location?: string;
     authors?: string;
     organisations?: string;
+    missingImageText?: string;
 }
 
 export interface PeopleCategory {
@@ -37,6 +38,7 @@ export interface OutputCardContent {
     link?: string;
     imageFolder?: string;
     image?: string;
+    missingImageText?: string;
     dateTag?: string;
     location?: string;
     label?: string;

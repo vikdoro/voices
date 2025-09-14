@@ -21,7 +21,7 @@ const props = defineProps({
   },
   sizes: {
     type: String,
-    default: '(min-width: 1024px) 60vw, 100vw'
+    default: '(min-width: 1028px) 60vw, 100vw'
   },
   formats: { type: Array, default: () => ['avif', 'webp', 'jpg'] },
   loading: { type: String as () => 'lazy' | 'eager', default: 'lazy' },

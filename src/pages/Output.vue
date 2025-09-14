@@ -3,11 +3,6 @@
     <section class="output-section white-background">
         <header>
             <h1 class="intro">Output</h1>
-            <h1 class="subheader">
-                Our core objective is to produce high quality scientific output 
-                that contributes to the history of the Holocaust and to the multimodal
-                study of the human past.
-            </h1>
         </header>
         <ContentCategory
             v-for="category in categories"
@@ -23,6 +18,7 @@
                 :link="item.link"
                 imageFolder="output"
                 :image="item.image"
+                :missingImageText="item.missingImageText"
                 :dateTag="item.dateTag"
                 :location="item.location"
                 :authors="item.authors"

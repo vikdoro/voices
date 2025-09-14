@@ -89,7 +89,9 @@ const scrollToContact = () => scrollToSection('contact-container');
 
         &:hover {
             .sub-menu-container {
-                transform: translateX(0);
+                opacity: 1;
+                transform: scale(1);
+                display: block;
             }
 
             a {
@@ -106,13 +108,14 @@ const scrollToContact = () => scrollToSection('contact-container');
             position: absolute;
             top: calc(100% - 32px);
             right: 16px;
-            transform: translateX(calc(100% + 109px));
-            transition: transform 0.3s linear;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 0.15s linear;
             z-index: 10;
             padding: 16px 0 40px 40px;
             
             &:hover {
-                transform: translateX(0);
+                opacity: 1;
             }
         }
         

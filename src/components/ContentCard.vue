@@ -5,8 +5,8 @@
             :base-path="`data/${imageFolder}/images/${image.replace(/\.[^/.]+$/, '')}`"
             alt="link illustration"
             class="content-card-image"
-            :dimensions="[1221, 814, 407, 738, 512, 246]"
-            sizes="407px"
+            :dimensions="multiplyDimensions([407, 246])"
+            sizes="407px, (min-width: 1028px) 246px"
         />
         <div v-if="dateTag" class="image-overlay-tag" :class="{ 'highlighted-date-tag': dateTag === 'In progress' }">{{ dateTag }}</div>
     </div>
@@ -35,6 +35,7 @@
 import { computed } from 'vue';
 import type { OutputCardContent } from '../types';
 import ResponsivePicture from './ResponsivePicture.vue';
+import { multiplyDimensions } from '@/utils/utils';
 
 const props = defineProps<OutputCardContent>();
 

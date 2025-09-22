@@ -22,7 +22,7 @@
                 <div class="sub-menu-container">
                     <div class="sub-menu">
                         <RouterLink to="/output#publications">Publications</RouterLink>
-                        <RouterLink to="/output#talks-workshops">Talks & Presentations & Workshops</RouterLink>
+                        <RouterLink to="/output#talks-workshops">Talks & Workshops</RouterLink>
                         <RouterLink to="/output#podcasts-webinars">Podcasts & Webinars</RouterLink>
                         <RouterLink to="/output#digital-memorial">Digital Memorial</RouterLink>
                     </div>
@@ -135,6 +135,10 @@ const scrollToContact = () => scrollToSection('contact-container');
                 white-space: nowrap;
                 transition: all 0.3s ease;
                 position: relative;
+
+                @media (max-width: $tablet) {
+                    padding: 4px 20px;
+                }
 
                 &::before,
                 &::after {

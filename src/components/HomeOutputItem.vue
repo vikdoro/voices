@@ -6,7 +6,7 @@
                 class="home-output-image" 
                 :alt="title"
                 :dimensions="multiplyDimensions([378, 489, 600])"
-                sizes="600px"
+                sizes="600px, (min-width: 1028px) 489px, (min-width: 768px) 378px"
             />
             <div class="home-output-image-gradient-overlay"></div>
             <h3 class="image-overlay-title">{{ title }}</h3>

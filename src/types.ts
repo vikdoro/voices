@@ -12,6 +12,7 @@ export interface OutputItem {
     deliveryMode?: string;
     dateTag?: string;
     image?: string;
+    altText?: string;
     location?: string;
     authors?: string;
     organisations?: string;

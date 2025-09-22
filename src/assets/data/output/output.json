@@ -17,6 +17,7 @@
         "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
         "deliveryMode": "Digital",
         "image": "image-1-output.png",
+        "altText": "Image for the publication",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "In progress"
       },
@@ -24,6 +25,7 @@
         "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
         "deliveryMode": "Digital",
         "image": "image-1-output.png",
+        "altText": "Image for the publication",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "In progress"
       }
@@ -40,6 +42,7 @@
         "deliveryMode": "On-site & Online",
         "location": "Digital Humanities Summer Institute, University of Montreal",
         "image": "image-2-output.png",
+        "altText": "Image for the event",
         "dateTag": "June 2026",
         "authors": "Gabor Mihaly Toth, Mohamed Laib"
       },
@@ -48,6 +51,7 @@
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
         "image": "image-2-output.png",
+        "altText": "Image for the event",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -58,6 +62,7 @@
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
         "image": "image-2-output.png",
+        "altText": "Image for the event",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -68,6 +73,7 @@
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
         "image": "image-2-output.png",
+        "altText": "Image for the event",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -78,6 +84,7 @@
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
         "image": "image-2-output.png",
+        "altText": "Image for the event",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -88,6 +95,18 @@
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "On-site & Online",
         "image": "image-2-output.png",
+        "altText": "Image for the event",
+        "dateTag": "5 August, 2025",
+        "location": "Riga University",
+        "authors": "Gabor Mihaly Toth",
+        "organisations": "Holocaust and Genocide Studies"
+      },
+      {
+        "title": "Fragments from the Past: the Computational Study of Missing Records",
+        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+        "deliveryMode": "On-site & Online",
+        "image": "image-2-output.png",
+        "altText": "Image for the event",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -105,6 +124,7 @@
         "title": "Textual Data Processing with LLM in the Humanities",
         "deliveryMode": "Online",
         "image": "image-3-output.png",
+        "altText": "Image for the online program",
         "dateTag": "15 May, 2025",
         "authors": "Gabor Mihaly Toth"
       },
@@ -113,6 +133,7 @@
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "Online",
         "image": "image-2-output.png",
+        "altText": "Image for the online program",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",
@@ -130,6 +151,7 @@
         "title": "Digital Memorial 1",
         "deliveryMode": "Online",
         "image": "image-4-output.png",
+        "altText": "Image for the digital memorial item",
         "authors": "Gabor Mihaly Toth"
       },
       {
@@ -137,6 +159,7 @@
         "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
         "deliveryMode": "Online",
         "image": "image-2-output.png",
+        "altText": "Image for the digital memorial item",
         "dateTag": "5 August, 2025",
         "location": "Riga University",
         "authors": "Gabor Mihaly Toth",

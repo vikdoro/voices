@@ -51,7 +51,7 @@
                     </h4>
                     <div class="sub-link-container" :class="{ 'expanded': expandedSections.output }">
                         <RouterLink to="/output#publications" class="mobile-nav-link sub-link" @click="closeMenu">Publications</RouterLink>
-                        <RouterLink to="/output#talks-workshops" class="mobile-nav-link sub-link" @click="closeMenu">Talks & Presentations & Workshops</RouterLink>
+                        <RouterLink to="/output#talks-workshops" class="mobile-nav-link sub-link" @click="closeMenu">Talks & Workshops</RouterLink>
                         <RouterLink to="/output#podcasts-webinars" class="mobile-nav-link sub-link" @click="closeMenu">Podcasts & Webinars</RouterLink>
                         <RouterLink to="/output#digital-memorial" class="mobile-nav-link sub-link" @click="closeMenu">Digital Memorial</RouterLink>
                     </div>
@@ -107,6 +107,7 @@ const scrollToContact = () => {
 
 <style scoped lang="scss">
 @use '../styles/vars' as vars;
+@use '../styles/breakpoints' as *;
 
 .mobile-nav {
     display: none;

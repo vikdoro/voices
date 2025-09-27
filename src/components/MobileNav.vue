@@ -35,12 +35,14 @@
                         People
                     </h4>
                     <div class="sub-link-container" :class="{ 'expanded': expandedSections.people }">
-                        <RouterLink to="/people#team-members" class="mobile-nav-link sub-link" @click="closeMenu">
-                            <span>Team members</span>
-                        </RouterLink>
-
-                        <RouterLink to="/people#scientific-advisory-board" class="mobile-nav-link sub-link" @click="closeMenu">
-                            <span>Scientific Advisory Board</span>
+                        <RouterLink 
+                            v-for="category in peopleCategories" 
+                            :key="category.slug"
+                            :to="`/people#${category.slug}`" 
+                            class="mobile-nav-link sub-link" 
+                            @click="closeMenu"
+                        >
+                            <span>{{ category.title }}</span>
                         </RouterLink>
                     </div>
                 </div>
@@ -50,10 +52,15 @@
                         Output
                     </h4>
                     <div class="sub-link-container" :class="{ 'expanded': expandedSections.output }">
-                        <RouterLink to="/output#publications" class="mobile-nav-link sub-link" @click="closeMenu">Publications</RouterLink>
-                        <RouterLink to="/output#talks-workshops" class="mobile-nav-link sub-link" @click="closeMenu">Talks & Workshops</RouterLink>
-                        <RouterLink to="/output#podcasts-webinars" class="mobile-nav-link sub-link" @click="closeMenu">Podcasts & Webinars</RouterLink>
-                        <RouterLink to="/output#digital-memorial" class="mobile-nav-link sub-link" @click="closeMenu">Digital Memorial</RouterLink>
+                        <RouterLink 
+                            v-for="category in outputCategories" 
+                            :key="category.slug"
+                            :to="`/output#${category.slug}`" 
+                            class="mobile-nav-link sub-link" 
+                            @click="closeMenu"
+                        >
+                            {{ category.title }}
+                        </RouterLink>
                     </div>
                 </div>
                 
@@ -70,12 +77,15 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { scrollToSection } from '../utils/scroll';
+import { useNavigationData } from '../composables/useNavigationData';
 
 const isMenuOpen = ref(false);
 const expandedSections = ref({
     people: false,
     output: false
 });
+
+const { peopleCategories, outputCategories } = useNavigationData();
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;

@@ -10,8 +10,13 @@
                 </RouterLink>
                 <div class="sub-menu-container">
                     <div class="sub-menu">
-                        <RouterLink to="/people#team-members">Team members</RouterLink>
-                        <RouterLink to="/people#scientific-advisory-board">Scientific Advisory Board</RouterLink>
+                        <RouterLink 
+                            v-for="category in peopleCategories" 
+                            :key="category.slug"
+                            :to="`/people#${category.slug}`"
+                        >
+                            {{ category.title }}
+                        </RouterLink>
                     </div>
                 </div>
             </div>
@@ -21,10 +26,13 @@
                 </RouterLink>
                 <div class="sub-menu-container">
                     <div class="sub-menu">
-                        <RouterLink to="/output#publications">Publications</RouterLink>
-                        <RouterLink to="/output#talks-workshops">Talks & Workshops</RouterLink>
-                        <RouterLink to="/output#podcasts-webinars">Podcasts & Webinars</RouterLink>
-                        <RouterLink to="/output#digital-memorial">Digital Memorial</RouterLink>
+                        <RouterLink 
+                            v-for="category in outputCategories" 
+                            :key="category.slug"
+                            :to="`/output#${category.slug}`"
+                        >
+                            {{ category.title }}
+                        </RouterLink>
                     </div>
                 </div>
             </div>
@@ -38,6 +46,9 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { scrollToSection } from '../utils/scroll';
+import { useNavigationData } from '../composables/useNavigationData';
+
+const { peopleCategories, outputCategories } = useNavigationData();
 
 const scrollToContact = () => scrollToSection('contact-container');
 </script>

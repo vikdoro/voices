@@ -1,6 +1,6 @@
 @use 'breakpoints' as *;
 
-img.glass-1 {
+img#glass-1 {
     position: absolute;
     top: 683px;
     left: 916px;
@@ -18,7 +18,7 @@ img.glass-1 {
     }
 }
 
-img.glass-2 {
+img#glass-2 {
     position: absolute;
     top: 138px;
     left: 1432px;
@@ -44,7 +44,7 @@ img.glass-2 {
 
 }
 
-img.glass-3 {
+img#glass-3 {
     position: absolute;
     top: 45px;
     left: 800px;
@@ -67,10 +67,10 @@ img.glass-3 {
     }
 }
 
-img.glass-4 {
+img#glass-4 {
     position: absolute;
     top: 904px;
-    left: 526px;
+    left: 320px;
     width: 138px;
     z-index: 1;
 
@@ -87,7 +87,7 @@ img.glass-4 {
 
 }
 
-img.glass-5 {
+img#glass-5 {
     position: absolute;
     top: 896px;
     left: 1716px;
@@ -96,7 +96,7 @@ img.glass-5 {
 
     @media (max-width: $desktop) {
         top: 840px;
-        left: 1036px;
+        left: 1125px;
         width: 409px;
     }
 
@@ -107,15 +107,15 @@ img.glass-5 {
     }
 }
 
-img.glass-6 {
+img#glass-6 {
     position: absolute;
     top: calc(100vh + 210px);
-    left: 25px;
-    width: 259px;
+    left: -16px;
+    width: 185px;
     z-index: 3;
 
-    
     @media (max-width: $large-desktop) {
+        top: calc(100vh + 110px);
         left: -16px;
         width: 185px;
     }
@@ -131,7 +131,7 @@ img.glass-6 {
     }
 }
 
-img.glass-7 {
+img#glass-7 {
     position: absolute;
     bottom: -98px;
     left: 1400px;

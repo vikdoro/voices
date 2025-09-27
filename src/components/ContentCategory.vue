@@ -21,16 +21,18 @@ defineProps<{
 @use '../styles/breakpoints' as *;
 
 .content-category {
-    h2 {
-        margin: 0 0 24px;
-    }
+    padding-top: 56px;
+    border-bottom: 3px solid black;
+
     @media (max-width: $mobile) {
         h2 {
             font-size: 18px;
         }
     }
-    padding-top: 56px;
-    border-bottom: 3px solid black;
+
+    h2 {
+        margin: 0 0 24px;
+    }
 }
 
 .scroll-wrapper {

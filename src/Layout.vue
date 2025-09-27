@@ -1,7 +1,7 @@
 <template>
     <div class="nav-container">
         <nav>
-            <RouterLink to="/" class="logo-link">
+            <RouterLink to="/" class="logo-link" @click="handleLogoClick">
                 <img src="/logo.svg" alt="Voices from Auschwitz Logo" class="logo">
             </RouterLink>
             <DesktopNav />
@@ -10,13 +10,13 @@
     </div>
     <div class="view-container">
         <div class="glass-container">
-            <ResponsivePicture basePath="glasses/glass-1" alt="Broken glass" class="glass-1" :dimensions="multiplyDimensions([608, 346])" sizes="608px, (min-width: 768px) 306px"/>
-            <ResponsivePicture basePath="glasses/glass-2" alt="Broken glass" class="glass-2" :dimensions="multiplyDimensions([365, 152])" sizes="365px, (min-width: 768px) 152px" fetchpriority="high"/>
-            <ResponsivePicture basePath="glasses/glass-3" alt="Broken glass" class="glass-3" :dimensions="multiplyDimensions([283, 169])" sizes="283px, (min-width: 768px) 169px" fetchpriority="high"/>
-            <ResponsivePicture basePath="glasses/glass-4" alt="Broken glass" class="glass-4" :dimensions="multiplyDimensions([138, 100])" sizes="138px, (min-width: 768px) 100px"/>
-            <ResponsivePicture basePath="glasses/glass-5" alt="Broken glass" class="glass-5" :dimensions="multiplyDimensions([449, 202])" sizes="449px, (min-width: 768px) 202px" fetchpriority="low"/>
-            <ResponsivePicture basePath="glasses/glass-6" alt="Broken glass" class="glass-6" :dimensions="multiplyDimensions([259, 124])" sizes="259px, (min-width: 1028px) 124px" fetchpriority="low"/>
-            <ResponsivePicture basePath="glasses/glass-7" alt="Broken glass" class="glass-7" :dimensions="multiplyDimensions([298, 178])" sizes="298px, (min-width: 768px) 178px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses/glass-1" alt="Broken glass" id="glass-1" :dimensions="multiplyDimensions([608, 346])" sizes="608px, (min-width: 768px) 306px"/>
+            <ResponsivePicture basePath="glasses/glass-2" alt="Broken glass" id="glass-2" :dimensions="multiplyDimensions([365, 152])" sizes="365px, (min-width: 768px) 152px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses/glass-3" alt="Broken glass" id="glass-3" :dimensions="multiplyDimensions([283, 169])" sizes="283px, (min-width: 768px) 169px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses/glass-4" alt="Broken glass" id="glass-4" :dimensions="multiplyDimensions([138, 100])" sizes="138px, (min-width: 768px) 100px"/>
+            <ResponsivePicture basePath="glasses/glass-5" alt="Broken glass" id="glass-5" :dimensions="multiplyDimensions([449, 202])" sizes="449px, (min-width: 768px) 202px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses/glass-6" alt="Broken glass" id="glass-6" :dimensions="multiplyDimensions([259, 124])" sizes="259px, (min-width: 1028px) 124px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses/glass-7" alt="Broken glass" id="glass-7" :dimensions="multiplyDimensions([298, 178])" sizes="298px, (min-width: 768px) 178px" fetchpriority="low"/>
         </div>
         <div class="main-visual"></div>
 
@@ -61,11 +61,129 @@
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute, useRouter } from 'vue-router';
+import { onMounted, onBeforeUnmount } from 'vue';
 import DesktopNav from './components/DesktopNav.vue';
 import MobileNav from './components/MobileNav.vue';
 import ResponsivePicture from './components/ResponsivePicture.vue';
 import { multiplyDimensions } from './utils/utils';
+
+const route = useRoute();
+const router = useRouter();
+
+let isTicking = false;
+let handleScrollRef: ((this: Window, ev: Event) => any) | null = null;
+let handleResizeRef: ((this: Window, ev: Event) => any) | null = null;
+
+type GlassConfig = {
+    x: number; // target X offset in px (negative moves left)
+    y?: number; // optional target Y offset in px
+    range: number; // scroll range in px to reach target
+};
+
+const glassConfig: Record<string, GlassConfig> = {
+    'glass-1': { x: -70, y: 90, range: 2000 },
+    'glass-2': { x: -45, y: -65, range: 1500 },
+    'glass-3': { x: -25, y: -50, range: 750 },
+    'glass-4': { x: -225, y: 75, range: 4000 },
+    'glass-5': { x: 0, y: 350, range: 4000 },
+    'glass-6': { x: -15, y: 300, range: 6200 },
+    'glass-7': { x: 20, y: -10, range: 750 },
+};
+
+const glassElementIds = Object.keys(glassConfig);
+
+const handleLogoClick = (event: Event) => {
+    // Check if we're already on the home page
+    if (route.path === '/') {
+        event.preventDefault();
+        // Smooth scroll to top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    // If not on home page, let the router handle navigation normally
+};
+
+const getGlassElements = (): HTMLElement[] => {
+    return glassElementIds
+        .map(id => document.getElementById(id) as HTMLElement | null)
+        .filter((el): el is HTMLElement => !!el);
+};
+
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+const applyTransforms = (scrollY: number) => {
+    const elements = getGlassElements();
+    for (const el of elements) {
+        const cfg = glassConfig[el.id];
+        const progress = Math.min(1, Math.max(0, scrollY / cfg.range));
+        const eased = easeOutCubic(progress);
+        const tx = cfg.x * eased;
+        const ty = (cfg.y ?? 0) * eased;
+        el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+    }
+};
+
+const updateOverflowBehavior = () => {
+    const glassContainer = document.querySelector('.glass-container') as HTMLElement;
+    const viewContainer = document.querySelector('.view-container') as HTMLElement;
+    
+    if (!glassContainer || !viewContainer) return;
+    
+    const viewportWidth = window.innerWidth;
+    const viewContainerWidth = viewContainer.offsetWidth;
+    const availableSpace = viewportWidth - viewContainerWidth;
+    
+    // If there's enough space (300px buffer as you suggested), allow overflow
+    // Otherwise, clip to prevent horizontal scroll
+    if (availableSpace >= 150) {
+        glassContainer.classList.add('no-overflow-clip');
+    } else {
+        glassContainer.classList.remove('no-overflow-clip');
+    }
+};
+
+onMounted(() => {
+    const elements = getGlassElements();
+    for (const el of elements) {
+        el.style.willChange = 'transform';
+    }
+
+    // Initial position based on current scroll
+    applyTransforms(window.scrollY || window.pageYOffset || 0);
+
+    // Initial overflow behavior check
+    updateOverflowBehavior();
+
+    handleScrollRef = () => {
+        if (!isTicking) {
+            isTicking = true;
+            requestAnimationFrame(() => {
+                const y = window.scrollY || window.pageYOffset || 0;
+                applyTransforms(y);
+                isTicking = false;
+            });
+        }
+    };
+
+    handleResizeRef = () => {
+        updateOverflowBehavior();
+    };
+
+    window.addEventListener('scroll', handleScrollRef, { passive: true });
+    window.addEventListener('resize', handleResizeRef, { passive: true });
+});
+
+onBeforeUnmount(() => {
+    if (handleScrollRef) {
+        window.removeEventListener('scroll', handleScrollRef as EventListener);
+    }
+    if (handleResizeRef) {
+        window.removeEventListener('resize', handleResizeRef as EventListener);
+    }
+});
 
 </script>
 

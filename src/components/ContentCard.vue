@@ -10,7 +10,7 @@
         />
         <div v-if="dateTag" class="image-overlay-tag" :class="{ 'highlighted-date-tag': dateTag === 'In progress' }">{{ dateTag }}</div>
     </div>
-    <div v-else-if="missingImageText" class="content-card-missing-image-text">{{ missingImageText }}</div>
+    <div v-else-if="teaserText" class="content-card-missing-image-text">{{ teaserText }}</div>
     <div class="labels-above-title">
         <div v-if="label" class="content-card-label">{{ label }}</div>
         <div v-if="location" class="content-card-location">{{ location }}</div>

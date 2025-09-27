@@ -8,7 +8,7 @@
       {
         "title": "Virtual Holocaust Memory, a book review",
         "deliveryMode": "Digital",
-        "missingImageText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
+        "teaserText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "5 August, 2025"
 
@@ -16,16 +16,14 @@
       {
         "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
         "deliveryMode": "Digital",
-        "image": "image-1-output.png",
-        "altText": "Image for the publication",
+        "teaserText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "In progress"
       },
       {
         "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
         "deliveryMode": "Digital",
-        "image": "image-1-output.png",
-        "altText": "Image for the publication",
+        "teaserText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
         "authors": "Gabor Mihaly Toth",
         "dateTag": "In progress"
       }
@@ -125,7 +123,7 @@
         "deliveryMode": "Online",
         "image": "image-3-output.png",
         "altText": "Image for the online program",
-        "dateTag": "15 May, 2025",
+        "dateTag": "In progress",
         "authors": "Gabor Mihaly Toth"
       },
       {
@@ -152,6 +150,7 @@
         "deliveryMode": "Online",
         "image": "image-4-output.png",
         "altText": "Image for the digital memorial item",
+        "dateTag": "In progress",
         "authors": "Gabor Mihaly Toth"
       },
       {

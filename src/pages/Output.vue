@@ -18,7 +18,7 @@
                 :link="item.link"
                 imageFolder="output"
                 :image="item.image"
-                :missingImageText="item.missingImageText"
+                :teaserText="item.teaserText"
                 :dateTag="item.dateTag"
                 :location="item.location"
                 :authors="item.authors"

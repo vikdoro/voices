@@ -16,7 +16,7 @@ export function useHashScroll() {
         
         if (targetElement) {
           // Use smooth scrolling for hash navigation
-          scrollToSection(hashId, true);
+          scrollToSection(hashId);
         } else {
           console.warn(`Target element #${hashId} not found`);
         }
@@ -28,7 +28,7 @@ export function useHashScroll() {
   const scrollToHash = (hashId: string) => {
     const targetElement = document.getElementById(hashId);
     if (targetElement) {
-      scrollToSection(hashId, true);
+      scrollToSection(hashId);
     } else {
       console.warn(`Target element #${hashId} not found`);
     }

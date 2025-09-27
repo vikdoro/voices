@@ -77,7 +77,7 @@ const outputItems = ref<OutputItem[]>(outputData);
 // Use the hash scroll composable
 useHashScroll();
 
-const scrollToAbout = () => scrollToSection('about');
+const scrollToAbout = () => scrollToSection('about', 1200);
 </script>
 
 <style scoped lang="scss">

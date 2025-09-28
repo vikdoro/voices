@@ -2,6 +2,7 @@
     <div class="mobile-nav">
         <img
             src="/icons/mobile-menu.svg"
+            alt="Menu"
             class="hamburger-btn"
             @click="toggleMenu"
         >

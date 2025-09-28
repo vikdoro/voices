@@ -9,8 +9,11 @@ export function useHashScroll() {
   onMounted(() => {
     if (route.path === '/' && homeScrollPosition.value) {
       if (homeScrollPosition.value) {
+        
         window.requestAnimationFrame(() => {
-            scrollToSection(homeScrollPosition.value as string, 0);
+            window.requestAnimationFrame(() => {
+                scrollToSection(homeScrollPosition.value as string, 0);
+            });
         });
         return;
       }

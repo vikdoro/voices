@@ -10,13 +10,13 @@
     </div>
     <div class="view-container">
         <div class="glass-container">
-            <ResponsivePicture basePath="glasses/glass-1" alt="Broken glass" id="glass-1" :dimensions="multiplyDimensions([608, 346])" sizes="608px, (min-width: 768px) 306px" fetchpriority="high"/>
-            <ResponsivePicture basePath="glasses/glass-2" alt="Broken glass" id="glass-2" :dimensions="multiplyDimensions([365, 152])" sizes="365px, (min-width: 768px) 152px" fetchpriority="high"/>
-            <ResponsivePicture basePath="glasses/glass-3" alt="Broken glass" id="glass-3" :dimensions="multiplyDimensions([283, 169])" sizes="283px, (min-width: 768px) 169px" fetchpriority="high"/>
-            <ResponsivePicture basePath="glasses/glass-4" alt="Broken glass" id="glass-4" :dimensions="multiplyDimensions([138, 100])" sizes="138px, (min-width: 768px) 100px" fetchpriority="high"/>
-            <ResponsivePicture basePath="glasses/glass-5" alt="Broken glass" id="glass-5" :dimensions="multiplyDimensions([449, 202])" sizes="449px, (min-width: 768px) 202px" fetchpriority="low"/>
-            <ResponsivePicture basePath="glasses/glass-6" alt="Broken glass" id="glass-6" :dimensions="multiplyDimensions([259, 124])" sizes="259px, (min-width: 1028px) 124px" fetchpriority="low"/>
-            <ResponsivePicture basePath="glasses/glass-7" alt="Broken glass" id="glass-7" :dimensions="multiplyDimensions([298, 178])" sizes="298px, (min-width: 768px) 178px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses" image="glass-1_w1824.webp" alt="Broken glass" id="glass-1" :dimensions="multiplyDimensions([608, 346])" sizes="608px, (min-width: 768px) 306px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses" image="glass-2_w1095.webp" alt="Broken glass" id="glass-2" :dimensions="multiplyDimensions([365, 152])" sizes="365px, (min-width: 768px) 152px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses" image="glass-3_w987.webp" alt="Broken glass" id="glass-3" :dimensions="multiplyDimensions([283, 169])" sizes="283px, (min-width: 768px) 169px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses" image="glass-4_w414.webp" alt="Broken glass" id="glass-4" :dimensions="multiplyDimensions([138, 100])" sizes="138px, (min-width: 768px) 100px" fetchpriority="high"/>
+            <ResponsivePicture basePath="glasses" image="glass-5_w1347.webp" alt="Broken glass" id="glass-5" :dimensions="multiplyDimensions([449, 202])" sizes="449px, (min-width: 768px) 202px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses" image="glass-6_w777.webp" alt="Broken glass" id="glass-6" :dimensions="multiplyDimensions([259, 124])" sizes="259px, (min-width: 1028px) 124px" fetchpriority="low"/>
+            <ResponsivePicture basePath="glasses" image="glass-7_w894.webp" alt="Broken glass" id="glass-7" :dimensions="multiplyDimensions([298, 178])" sizes="298px, (min-width: 768px) 178px" fetchpriority="low"/>
         </div>
         <div class="main-visual"></div>
 

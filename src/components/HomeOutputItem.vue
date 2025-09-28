@@ -7,7 +7,8 @@
     >
         <div class="relative flex-fill-half">
             <ResponsivePicture 
-                :base-path="`home-output-images/${coverImage.replace(/\.[^/.]+$/, '')}`" 
+                base-path="home-output-images"
+                :image="coverImage"
                 class="home-output-image" 
                 :alt="title"
                 :dimensions="multiplyDimensions([378, 489, 600])"

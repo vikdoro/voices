@@ -2,7 +2,8 @@
 <a :href="link" class="content-card" :class="{ 'no-link': !link }" target="_blank">
     <div v-if="imageFolder && image" class="content-card-image-container">
         <ResponsivePicture 
-            :base-path="`data/${imageFolder}/images/${image.replace(/\.[^/.]+$/, '')}`"
+            base-path="data"
+            :image="`${imageFolder}/images/${image}`"
             alt="link illustration"
             class="content-card-image"
             :dimensions="multiplyDimensions([407, 246])"

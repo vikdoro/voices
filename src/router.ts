@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Layout from './Layout.vue';
-import { homeScrollPosition } from './homeScrollPosition';
 
 // Lazy load pages
 const Home = () => import('./pages/Home.vue');

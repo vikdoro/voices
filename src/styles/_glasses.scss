@@ -115,12 +115,12 @@ img#glass-6 {
     z-index: 3;
 
     @media (max-width: $xlarge-desktop) {
-        width: 185px;
+        left: 56px;
+        width: 174px;
 }
 
     @media (max-width: $desktop) {
         left: -100px;
-        width: 174px;
     }
 
     @media (max-width: $tablet) {
@@ -130,8 +130,9 @@ img#glass-6 {
 }
 
 .page-home img#glass-6 {
+    left: 48px;
     @media (max-width: $xlarge-desktop) {
-        left: -80px;
+        left: -116px;
     }
     @media (max-width: $desktop) {
         left: -136px;

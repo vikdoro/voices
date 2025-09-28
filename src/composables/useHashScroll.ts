@@ -1,11 +1,20 @@
 import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { scrollToSection } from '../utils/scroll';
+import { homeScrollPosition } from '../homeScrollPosition';
 
 export function useHashScroll() {
   const route = useRoute();
 
   onMounted(() => {
+    if (route.path === '/' && homeScrollPosition.value) {
+      if (homeScrollPosition.value) {
+        window.requestAnimationFrame(() => {
+            scrollToSection(homeScrollPosition.value as string, 0);
+        });
+        return;
+      }
+    }
     // Check if there's a hash in the URL
     if (route.hash) {
       const hashId = route.hash.slice(1); // Remove the #

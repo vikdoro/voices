@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Layout from './Layout.vue';
+import { homeScrollPosition } from './homeScrollPosition';
 
 // Lazy load pages
 const Home = () => import('./pages/Home.vue');
@@ -30,7 +31,11 @@ const router = createRouter({
 const HEADER_OFFSET = (document.querySelector('.site-header') as HTMLElement | null)?.offsetHeight ?? 0;
 
 router.afterEach(async (to, from) => {
-  if (!to.hash) return
+  
+  if (!to.hash) {
+    return;
+  }
+
   setTimeout(() => {
 
     const headerEl = document.querySelector('nav') as HTMLElement | null;

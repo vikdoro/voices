@@ -4,8 +4,8 @@
             <RouterLink to="/" class="logo-link" @click="handleLogoClick">
                 <img src="/logo.svg" alt="Voices from Auschwitz Logo" class="logo">
             </RouterLink>
-            <DesktopNav />
-            <MobileNav />
+            <DesktopNav @click="clearHomeScrollPosition" />
+            <MobileNav @click="clearHomeScrollPosition" />
         </nav>
     </div>
     <div class="view-container">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="footer-section">
-                <div id="contact-container">
+                <div id="contact">
                     <h2>Contact</h2>
                     <a href="mailto:univestity@uni.lu">email: univestity@uni.lu</a>
                 </div>
@@ -62,14 +62,36 @@
 
 <script setup lang="ts">
 import { RouterView, useRoute, useRouter } from 'vue-router';
-import { onMounted, onBeforeUnmount } from 'vue';
+import { onMounted, onBeforeUnmount, watch } from 'vue';
 import DesktopNav from './components/DesktopNav.vue';
 import MobileNav from './components/MobileNav.vue';
 import ResponsivePicture from './components/ResponsivePicture.vue';
 import { multiplyDimensions } from './utils/utils';
+import { updateHashFromScroll } from './utils/scroll';
+import { useNavigationData } from './composables/useNavigationData';
 
 const route = useRoute();
-const router = useRouter();
+const { clearHomeScrollPosition } = useNavigationData();
+
+// Manage body classes based on current route
+const updateBodyClass = () => {
+  const body = document.body;
+  
+  // Remove existing page classes
+  body.classList.remove('page-home', 'page-people', 'page-output');
+  
+  // Add current page class
+  if (route.name === 'home') {
+    body.classList.add('page-home');
+  } else if (route.name === 'people') {
+    body.classList.add('page-people');
+  } else if (route.name === 'output') {
+    body.classList.add('page-output');
+  }
+};
+
+// Watch for route changes to update body class
+watch(() => route.name, updateBodyClass, { immediate: true });
 
 let isTicking = false;
 let handleScrollRef: ((this: Window, ev: Event) => any) | null = null;
@@ -88,12 +110,15 @@ const glassConfig: Record<string, GlassConfig> = {
     'glass-4': { x: -225, y: 75, range: 4000 },
     'glass-5': { x: 0, y: 350, range: 4000 },
     'glass-6': { x: -15, y: 300, range: 6200 },
-    'glass-7': { x: 20, y: -10, range: 750 },
+    'glass-7': { x: 15, y: 1200, range: 4000 },
 };
 
 const glassElementIds = Object.keys(glassConfig);
 
 const handleLogoClick = (event: Event) => {
+    // Clear the home scroll position
+    clearHomeScrollPosition();
+    
     // Check if we're already on the home page
     if (route.path === '/') {
         event.preventDefault();
@@ -138,7 +163,7 @@ const updateOverflowBehavior = () => {
     
     // If there's enough space (300px buffer as you suggested), allow overflow
     // Otherwise, clip to prevent horizontal scroll
-    if (availableSpace >= 150) {
+    if (availableSpace > 0 ) {
         glassContainer.classList.add('no-overflow-clip');
     } else {
         glassContainer.classList.remove('no-overflow-clip');
@@ -163,6 +188,7 @@ onMounted(() => {
             requestAnimationFrame(() => {
                 const y = window.scrollY || window.pageYOffset || 0;
                 applyTransforms(y);
+                updateHashFromScroll();
                 isTicking = false;
             });
         }
@@ -240,7 +266,7 @@ footer {
         }
     }
 
-    #contact-container {
+    #contact {
         display: flex;
         flex-direction: column;
         margin-top: 280px;

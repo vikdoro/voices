@@ -110,15 +110,13 @@ img#glass-5 {
 img#glass-6 {
     position: absolute;
     top: calc(100vh + 210px);
-    left: -16px;
-    width: 185px;
+    left: 68px;
+    width: 238px;
     z-index: 3;
 
-    @media (max-width: $large-desktop) {
-        top: calc(100vh + 110px);
-        left: -16px;
+    @media (max-width: $xlarge-desktop) {
         width: 185px;
-    }
+}
 
     @media (max-width: $desktop) {
         left: -100px;
@@ -131,26 +129,33 @@ img#glass-6 {
     }
 }
 
-img#glass-7 {
-    position: absolute;
-    bottom: -98px;
-    left: 1400px;
-    width: 298px;
-    z-index: 3;
-
-    @media (max-width: $large-desktop) {
-        left: 1095px;
+.page-home img#glass-6 {
+    @media (max-width: $xlarge-desktop) {
+        left: -80px;
     }
     @media (max-width: $desktop) {
-        left: 995px;
+        left: -136px;
     }
+}
+
+img#glass-7 {
+    position: absolute;
+    bottom: 1100px;
+    right: -72px;
+    width: 260px;
+    z-index: 3;
+
     @media (max-width: $tablet) {
         width: 198px;
-        left: 495px;
-        bottom: -190px;
+        bottom: 1100px;
     }
     @media (max-width: $mobile) {
         width: 178px;
-        left: 180px;
+    }
+}
+
+.page-home img#glass-7 {
+    @media (max-width: $large-desktop) {
+        right: -198px;
     }
 }

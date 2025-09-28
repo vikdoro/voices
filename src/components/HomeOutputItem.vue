@@ -1,5 +1,10 @@
 <template>
-    <a :href="`/output#${slug}`" class="home-output-item alternating-flex-layout">
+    <RouterLink 
+        :id="slug" 
+        :to="`/output#${slug}`" 
+        class="home-output-item alternating-flex-layout"
+        @click="handleClick"
+    >
         <div class="relative flex-fill-half">
             <ResponsivePicture 
                 :base-path="`home-output-images/${coverImage.replace(/\.[^/.]+$/, '')}`" 
@@ -15,12 +20,13 @@
             <p class="home-output-item-description-text">{{ description }}</p>
             <img src="/icons/long_arrow.svg" alt="arrow button" class="long-arrow">
         </div>
-    </a>
+    </RouterLink>
 </template>
 
 <script setup lang="ts">
 import { multiplyDimensions } from '@/utils/utils';
 import ResponsivePicture from './ResponsivePicture.vue';
+import { homeScrollPosition } from '../homeScrollPosition';
 
 const props = defineProps<{
     title: string;
@@ -28,6 +34,11 @@ const props = defineProps<{
     coverImage: string;
     slug: string;
 }>();
+
+const handleClick = () => {
+    // Store the current slug in sessionStorage for the router to pick up
+    homeScrollPosition.value = props.slug;
+};
 </script>
 
 <style scoped lang="scss">

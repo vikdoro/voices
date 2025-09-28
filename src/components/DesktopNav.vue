@@ -2,7 +2,7 @@
     <div class="desktop-nav-menu">
         <div class="links">
             <div class="link-container">
-                <RouterLink to="/">Home</RouterLink>
+                <RouterLink to="/" @click="handleHomeClick">Home</RouterLink>
             </div>
             <div class="link-container extendible">
                 <RouterLink to="/people">
@@ -44,13 +44,21 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-import { scrollToSection } from '../utils/scroll';
+import { RouterLink, useRoute } from 'vue-router';
+import { scrollToSection, scrollToTop } from '../utils/scroll';
 import { useNavigationData } from '../composables/useNavigationData';
 
+const route = useRoute();
 const { peopleCategories, outputCategories } = useNavigationData();
 
-const scrollToContact = () => scrollToSection('contact-container');
+const scrollToContact = () => scrollToSection('contact');
+
+const handleHomeClick = () => {
+    // If we're already on the home page, scroll to top instead of navigating
+    if (route.path === '/') {
+        scrollToTop();
+    }
+};
 </script>
 
 <style scoped lang="scss">
@@ -131,12 +139,13 @@ const scrollToContact = () => scrollToSection('contact-container');
         }
         
         .sub-menu {
-            display: flex;
+            width: max-content;
+            max-width: 100vw;
             background: vars.$accent;
             color: #000;
 
             a {
-                display: block;
+                display: inline-block;
                 color: #000;
                 text-transform: uppercase;
                 padding: 4px 24px;

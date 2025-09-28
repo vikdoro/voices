@@ -16,7 +16,7 @@
         <!-- Mobile menu -->
         <div class="mobile-menu" :class="{ 'active': isMenuOpen }">
             <div class="mobile-menu-header">
-            <RouterLink to="/" class="logo-link">
+            <RouterLink to="/" class="logo-link" @click="handleLogoClick">
                 <img src="/logo.svg" alt="Voices from Auschwitz Logo" class="logo">
             </RouterLink>
                 <button class="close-btn" @click="closeMenu" aria-label="Close menu">
@@ -28,7 +28,7 @@
             </div>
             
             <nav class="mobile-nav-links">
-                <RouterLink to="/" class="mobile-nav-link" @click="closeMenu">Home</RouterLink>
+                <RouterLink to="/" class="mobile-nav-link" @click="handleHomeClick">Home</RouterLink>
                 
                 <div class="mobile-nav-section">
                     <h4 @click="toggleSection('people')" :class="{ 'expanded': expandedSections.people }">
@@ -75,17 +75,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
-import { scrollToSection } from '../utils/scroll';
+import { RouterLink, useRoute } from 'vue-router';
+import { scrollToSection, scrollToTop } from '../utils/scroll';
 import { useNavigationData } from '../composables/useNavigationData';
 
+const route = useRoute();
 const isMenuOpen = ref(false);
 const expandedSections = ref({
     people: false,
     output: false
 });
 
-const { peopleCategories, outputCategories } = useNavigationData();
+const { peopleCategories, outputCategories, clearHomeScrollPosition } = useNavigationData();
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
@@ -110,7 +111,20 @@ const toggleSection = (section: keyof typeof expandedSections.value) => {
 };
 
 const scrollToContact = () => {
-    scrollToSection('contact-container');
+    scrollToSection('contact');
+    closeMenu();
+};
+
+const handleLogoClick = () => {
+    clearHomeScrollPosition();
+    closeMenu();
+};
+
+const handleHomeClick = () => {
+    // If we're already on the home page, scroll to top instead of navigating
+    if (route.path === '/') {
+        scrollToTop();
+    }
     closeMenu();
 };
 </script>

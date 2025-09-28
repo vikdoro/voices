@@ -37,9 +37,6 @@
 		</section>
 
 		<section id="project-output">
-			<!-- <div class="flex-center-column">
-				<h2>Project Output</h2>
-			</div> -->
 			<div class="project-output-content">
 				<HomeOutputItem
 					v-for="item in outputItems"

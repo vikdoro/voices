@@ -108,7 +108,7 @@ const glassConfig: Record<string, GlassConfig> = {
     'glass-4': { x: -225, y: 75, range: 4000 },
     'glass-5': { x: 0, y: 350, range: 4000 },
     'glass-6': { x: -15, y: 300, range: 6200 },
-    'glass-7': { x: 15, y: 1200, range: 4000 },
+    'glass-7': { x: 15, y: 1200, range: 4200 },
 };
 
 const glassElementIds = Object.keys(glassConfig);

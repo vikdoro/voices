@@ -15,5 +15,7 @@ export function multiplyDimensions(numbers: number[]): number[] {
  * from the public folder instead of the data folder
  */
 export function isDemoMode(): boolean {
-    return window.localStorage.getItem('demo') === 'true';
+    const searchParams = new URLSearchParams(window.location.search);
+    const value = searchParams.get('demo');
+    return value === 'true' || value === '1';
 }

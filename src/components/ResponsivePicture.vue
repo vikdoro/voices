@@ -4,8 +4,6 @@ import { computed } from 'vue'
 // Import all responsive images from assets folder
 const imageModules = import.meta.glob('../assets/**/*.{webp,png,jpg,jpeg,svg}', { eager: true, import: 'default' }) as Record<string, string>
 
-
-
 const props = defineProps({
   basePath: { type: String, required: true },
   /* image filename with extension, e.g. "folder/images/my-photo.jpg" - will be processed to remove extension */
@@ -30,10 +28,78 @@ const props = defineProps({
   fetchpriority: { type: String, default: 'auto' }
 })
 
+// Check if the image prop is a web URL
+const isWebUrl = computed(() => {
+  if (!props.image) return false
+  
+  // Check if the string contains https:// or http://
+  const hasHttpProtocol = props.image.includes('https://') || props.image.includes('http://')
+  
+  if (hasHttpProtocol) {
+    // Extract the URL part starting from https:// or http://
+    const httpsIndex = props.image.indexOf('https://')
+    const httpIndex = props.image.indexOf('http://')
+    
+    let cleanUrl: string
+    if (httpsIndex !== -1) {
+      cleanUrl = props.image.substring(httpsIndex)
+    } else if (httpIndex !== -1) {
+      cleanUrl = props.image.substring(httpIndex)
+    } else {
+      return false
+    }
+    
+    try {
+      const url = new URL(cleanUrl)
+      // Check if it's a valid URL and not a local file path
+      return url.protocol === 'http:' || url.protocol === 'https:'
+    } catch {
+      return false
+    }
+  }
+  
+  return false
+})
+
+// Convert Google Drive sharing links to direct view URLs
+const convertGoogleDriveUrl = (url: string): string => {
+  // Google Drive sharing link pattern: https://drive.google.com/file/d/FILE_ID/view?usp=drive_link
+  const match = url.match(/\/file\/d\/([a-zA-Z0-9-_]+)\//)
+  if (match) {
+    const fileId = match[1]
+    // Try the newer format that works better for embedding
+    return `https://lh3.googleusercontent.com/d/${fileId}`
+  }
+  return url
+}
+
+// Extract clean URL from props.image if it contains https:// or http://
+const extractCleanUrl = (imageString: string): string => {
+  const httpsIndex = imageString.indexOf('https://')
+  const httpIndex = imageString.indexOf('http://')
+  
+  if (httpsIndex !== -1) {
+    return imageString.substring(httpsIndex)
+  } else if (httpIndex !== -1) {
+    return imageString.substring(httpIndex)
+  }
+  
+  return imageString
+}
+
+// Get the processed image URL (converts Google Drive URLs if needed)
+const processedImageUrl = computed(() => {
+  if (isWebUrl.value) {
+    const cleanUrl = extractCleanUrl(props.image)
+    return convertGoogleDriveUrl(cleanUrl)
+  }
+  return props.image
+})
+
 // Helper function to process the base path and image filename
 const processedBasePath = computed(() => {
-  if (props.image) {
-    // If image prop is provided, combine basePath with image (removing extension)
+  if (props.image && !isWebUrl.value) {
+    // If image prop is provided and not a web URL, combine basePath with image (removing extension)
     const imageWithoutExt = props.image.replace(/\.[^/.]+$/, '')
     return `${props.basePath}/${imageWithoutExt}`
   }
@@ -60,6 +126,9 @@ const findImageUrl = (basePath: string, width: number, format: string): string |
 }
 
 const srcsetFor = (format: string) => {
+  // If using a web URL, don't generate srcset
+  if (isWebUrl.value) return ''
+  
   const dimensions = props.dimensions as number[]
   const srcsetEntries: string[] = []
   
@@ -75,6 +144,9 @@ const srcsetFor = (format: string) => {
 
 // Get the best available format for the srcset
 const bestFormat = computed(() => {
+  // If using a web URL, return empty string
+  if (isWebUrl.value) return ''
+  
   const formats = props.formats as string[]
   // Try to find the first available format
   for (const format of formats) {
@@ -92,6 +164,11 @@ const bestFormat = computed(() => {
 
 // Get the largest width for intrinsic sizing
 const intrinsicDimensions = computed(() => {
+  // If using a web URL, return default dimensions
+  if (isWebUrl.value) {
+    return { width: 400 } // Default width for web URLs
+  }
+  
   const dimensions = props.dimensions as number[]
   const maxWidth = Math.max(...dimensions)
   return { width: maxWidth }
@@ -99,6 +176,11 @@ const intrinsicDimensions = computed(() => {
 
 // Get fallback src for older browsers
 const fallbackSrc = computed(() => {
+  // If image is a web URL, use the processed URL (with Google Drive conversion if needed)
+  if (isWebUrl.value) {
+    return processedImageUrl.value
+  }
+  
   if (props.image) {
     // If image prop is provided, try to find it in the imported modules
     const imageKey = `../assets/${props.basePath}/${props.image}`
@@ -113,6 +195,7 @@ const fallbackSrc = computed(() => {
   const maxWidth = Math.max(...dimensions)
   return findImageUrl(processedBasePath.value, maxWidth, bestFormat.value) || undefined
 })
+
 </script>
 
 <template>
@@ -126,4 +209,4 @@ const fallbackSrc = computed(() => {
     :fetchpriority="props.fetchpriority"
     :width="intrinsicDimensions.width"
     />
-  </template>
+</template>

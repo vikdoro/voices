@@ -27,6 +27,25 @@ const router = createRouter({
   }
 });
 
+// Ensure the demo query (?demo=true or ?demo=1) persists across internal navigations
+router.beforeEach((to, from) => {
+  const getDemoFromLocation = () => new URLSearchParams(window.location.search).get('demo');
+  const fromDemo = (from.query.demo as string | undefined) ?? getDemoFromLocation() ?? undefined;
+  const toDemo = to.query.demo as string | undefined;
+
+  const shouldCarryDemo = (value: string | undefined) => value === 'true' || value === '1';
+
+  if (!toDemo && shouldCarryDemo(fromDemo)) {
+    return {
+      name: to.name ?? undefined,
+      path: to.path,
+      params: to.params,
+      query: { ...to.query, demo: fromDemo },
+      hash: to.hash,
+    };
+  }
+});
+
 const HEADER_OFFSET = (document.querySelector('.site-header') as HTMLElement | null)?.offsetHeight ?? 0;
 
 router.afterEach(async (to, from) => {

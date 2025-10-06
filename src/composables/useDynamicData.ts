@@ -108,7 +108,6 @@ export function useDynamicData<T>(assetData: T, publicPath: string, config?: { e
         error.value = null;
 
         try {
-            console.log('publicPath', publicPath);
             const fetchedData = await fetchWithCache(publicPath, assetData);
             data.value = fetchedData;
         } catch (err) {
@@ -162,7 +161,6 @@ export function useMultipleDynamicData<T extends Record<string, any>>(dataConfig
         try {
             const promises = Object.entries(dataConfig).map(async ([key, dataItemConfig]) => {
                 const typedKey = key as keyof T;
-                console.log('config.publicPath', dataItemConfig.publicPath);
                 
                 try {
                     const fetchedData = await fetchWithCache(dataItemConfig.publicPath, dataItemConfig.assetData);

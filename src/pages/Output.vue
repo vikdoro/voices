@@ -40,8 +40,9 @@ import CtaButton from '../components/CtaButton.vue';
 import categoriesData from '../assets/data/output/output.json';
 import type { OutputCategory } from '../types';
 import { useHashScroll } from '../composables/useHashScroll';
+import { useDynamicData } from '../composables/useDynamicData';
 
-const categories = ref<OutputCategory[]>(categoriesData);
+const { data: categories } = useDynamicData<OutputCategory[]>(categoriesData, 'output');
 
 // Track how many items are visible per category (by slug)
 const visibleCounts = ref<Record<string, number>>({});

@@ -61,6 +61,7 @@ import CtaButton from '../components/CtaButton.vue';
 import outputData from '../assets/data/output/output.json';
 import { scrollToSection } from '../utils/scroll';
 import { useHashScroll } from '../composables/useHashScroll';
+import { useDynamicData } from '../composables/useDynamicData';
 
 interface OutputItem {
 	title: string;
@@ -69,7 +70,7 @@ interface OutputItem {
 	slug: string;
 }
 
-const outputItems = ref<OutputItem[]>(outputData);
+const { data: outputItems } = useDynamicData<OutputItem[]>(outputData, 'output');
 
 // Use the hash scroll composable
 useHashScroll();

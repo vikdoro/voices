@@ -34,8 +34,9 @@ import ContentCard from '../components/ContentCard.vue';
 import categoriesData from '../assets/data/people/people.json';
 import type { PeopleCategory } from '../types';
 import { useHashScroll } from '../composables/useHashScroll';
+import { useDynamicData } from '../composables/useDynamicData';
 
-const categories = ref<PeopleCategory[]>(categoriesData);
+const { data: categories } = useDynamicData<PeopleCategory[]>(categoriesData, 'people');
 
 // Use the hash scroll composable
 useHashScroll();

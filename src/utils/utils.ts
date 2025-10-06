@@ -9,3 +9,11 @@
 export function multiplyDimensions(numbers: number[]): number[] {
   return numbers.flatMap(num => [num, num * 2, num * 3]);
 }
+
+/**
+ * For demo purposes, we may want to read the dynamic content
+ * from the public folder instead of the data folder
+ */
+export function isDemoMode(): boolean {
+    return window.localStorage.getItem('demo') === 'true';
+}

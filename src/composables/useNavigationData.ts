@@ -1,17 +1,23 @@
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import peopleData from '../assets/data/people/people.json';
 import outputData from '../assets/data/output/output.json';
 import type { PeopleCategory, OutputCategory } from '../types';
 import { homeScrollPosition } from '../homeScrollPosition';
+import { useMultipleDynamicData } from './useDynamicData';
 
-export function useNavigationData() {
-    const peopleCategories = ref<PeopleCategory[]>([]);
-    const outputCategories = ref<OutputCategory[]>([]);
+export function useNavigationData(config?: { error?: (message: string) => void }) {
+    const dataResult = useMultipleDynamicData({
+        peopleCategories: { 
+            assetData: peopleData, 
+            publicPath: 'people' 
+        },
+        outputCategories: { 
+            assetData: outputData, 
+            publicPath: 'output' 
+        }
+    }, config);
 
-    onMounted(() => {
-        peopleCategories.value = peopleData;
-        outputCategories.value = outputData;
-    });
+    const { peopleCategories, outputCategories } = dataResult;
 
     const clearHomeScrollPosition = () => {
         homeScrollPosition.value = null;

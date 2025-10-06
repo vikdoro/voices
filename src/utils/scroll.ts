@@ -88,11 +88,17 @@ let hashUpdateTimeout: number | null = null;
 // Import JSON data to build route section map
 import peopleData from '../assets/data/people/people.json';
 import outputData from '../assets/data/output/output.json';
+import { getCachedData } from '../composables/useDynamicData';
 
 // Function to build route section map dynamically
-function buildRouteSectionMap(): Record<string, string[]> {
+async function buildRouteSectionMap(): Promise<Record<string, string[]>> {
+    const [currentPeopleData, currentOutputData] = await Promise.all([
+        getCachedData('people', peopleData),
+        getCachedData('output', outputData)
+    ]);
+    
     // Extract output slugs to include in home page monitoring
-    const outputSections = outputData.map(item => item.slug);
+    const outputSections = currentOutputData.map(item => item.slug);
     
     const map: Record<string, string[]> = {
         // Home page monitors the about, output sections, and contact sections
@@ -100,7 +106,7 @@ function buildRouteSectionMap(): Record<string, string[]> {
     };
     
     // Add people sections from people.json
-    const peopleSections = peopleData.map(item => item.slug);
+    const peopleSections = currentPeopleData.map(item => item.slug);
     map['/people'] = [...peopleSections, 'contact'];
     
     // Add output sections from output.json
@@ -110,7 +116,12 @@ function buildRouteSectionMap(): Record<string, string[]> {
 }
 
 // Map of routes to sections that should be monitored for hash updates
-const routeSectionMap = buildRouteSectionMap();
+let routeSectionMap: Record<string, string[]> = {};
+
+// Initialize the route section map
+buildRouteSectionMap().then(map => {
+    routeSectionMap = map;
+});
 
 /**
  * Updates the hash in the URL based on the current scroll position

@@ -1,5 +1,9 @@
 @use 'breakpoints' as *;
 
+.glass-container img {
+    will-change: transform;
+}
+
 img#glass-1 {
     position: absolute;
     top: 683px;

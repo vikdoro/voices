@@ -2,36 +2,23 @@
 	<div class="home-container">
 		<section class="home-section">
 			<header>
-				<h1 class="intro">VOICES FROM Auschwitz</h1>
+				<h1 class="intro">{{ homeContent?.intro }}</h1>
 				<h1 class="subheader">
-					Unlocking Collective Memory with
-					<span class="no-wrap">the Multimodal Analysis</span> of
-					Survivor Testimonies
+					{{ homeContent?.subheaderStart }}
+					<span class="no-wrap">{{ homeContent?.subheaderMiddleNoWrapText }}</span>
+					{{ homeContent?.subheaderEnd }}
 				</h1>
-				<CtaButton text="START READING" @click="scrollToAbout" />
+				<CtaButton :text="homeContent?.ctaButton || 'START READING'" @click="scrollToAbout" />
 			</header>
 		</section>
 
 		<section id="about" class="about-section">
 			<div class="about-content">
 				<p>
-					Rose and Jack came from very different walks of life.
-					However, at some point, their paths crossed; they were both
-					deported to the Auschwitz concentration camp. Even though
-					they were in the same place at the same time, later they
-					invoked the past in a contrasting manner. Both Rose and Jack
-					gave an oral history testimony in the 1990s, but their
-					stories, as well as the non-verbal layer of their memories,
-					were very different.
+					{{ homeContent?.about.paragraph1 }}
 				</p>
 				<p>
-					Inspired by these differences, we compare how thousands of
-					women and men survivors remembered life in Auschwitz. We use
-					a multimodal approach supported by artificial intelligence;
-					we investigate not only the textual content of testimonies;
-					we also study the voice, the eye movement, the body posture,
-					and other non-verbal gestures of survivors recalling a
-					troubled past.
+					{{ homeContent?.about.paragraph2 }}
 				</p>
 			</div>
 		</section>
@@ -49,16 +36,17 @@
 			</div>
 		</section>
         <p class="closing-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.
+            {{ homeContent?.closingText }}
         </p>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import HomeOutputItem from '../components/HomeOutputItem.vue';
 import CtaButton from '../components/CtaButton.vue';
 import outputData from '../assets/data/output/output.json';
+import homeContactData from '../assets/data/home-and-contact.json';
 import { scrollToSection } from '../utils/scroll';
 import { useHashScroll } from '../composables/useHashScroll';
 import { useDynamicData } from '../composables/useDynamicData';
@@ -70,7 +58,22 @@ interface OutputItem {
 	slug: string;
 }
 
+interface HomeContent {
+	intro: string;
+	subheaderStart: string;
+	subheaderMiddleNoWrapText: string;
+	subheaderEnd: string;
+	ctaButton: string;
+	about: {
+		paragraph1: string;
+		paragraph2: string;
+	};
+	closingText: string;
+}
+
 const { data: outputItems } = useDynamicData<OutputItem[]>(outputData, 'output');
+const { data: homeContactContent } = useDynamicData(homeContactData, 'home-and-contact');
+const homeContent = computed(() => homeContactContent.value.home);
 
 // Use the hash scroll composable
 useHashScroll();

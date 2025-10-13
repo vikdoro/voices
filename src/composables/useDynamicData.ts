@@ -7,7 +7,8 @@ import { isDemoMode } from '../utils/utils';
 const getGoogleDriveUrl = (publicPath: string): string | null => {
     const pathMap: Record<string, string> = {
         'output': '/api/data/output',
-        'people': '/api/data/people'
+        'people': '/api/data/people',
+        'home-and-contact': '/api/data/home-and-contact'
     };
     
     return pathMap[publicPath] || null;

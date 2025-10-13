@@ -47,7 +47,7 @@
         <div class="footer-section">
             <div id="contact">
                 <h2>Contact</h2>
-                <a href="mailto:univestity@uni.lu">email: univestity@uni.lu</a>
+                <a :href="`mailto:${contactData?.email}`">email: {{ contactData?.email }}</a>
             </div>
             <hr />
         </div>
@@ -60,16 +60,22 @@
 
 <script setup lang="ts">
 import { RouterView, useRoute } from 'vue-router';
-import { onMounted, onBeforeUnmount, watch } from 'vue';
+import { onMounted, onBeforeUnmount, watch, computed } from 'vue';
 import DesktopNav from './components/DesktopNav.vue';
 import MobileNav from './components/MobileNav.vue';
 import ResponsivePicture from './components/ResponsivePicture.vue';
 import { multiplyDimensions } from './utils/utils';
 import { updateHashFromScroll } from './utils/scroll';
 import { useNavigationData } from './composables/useNavigationData';
+import { useDynamicData } from './composables/useDynamicData';
+import homeContactData from './assets/data/home-and-contact.json';
 
 const route = useRoute();
 const { clearHomeScrollPosition } = useNavigationData();
+
+// Load contact data
+const { data: homeContactContent } = useDynamicData(homeContactData, 'home-and-contact');
+const contactData = computed(() => homeContactContent.value.contact);
 
 // Manage body classes based on current route
 const updateBodyClass = () => {

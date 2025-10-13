@@ -17,21 +17,35 @@ export default {
 			}
 		}
 
-		if (url.pathname === "/api/data/people") {
-			try {
-				const response = await fetch('https://drive.google.com/uc?export=download&id=1IFrFVz_kWsnI04462eTlyYQcdDa7MLd1');
-				if (response.ok) {
-					const data = await response.json();
-					return Response.json(data);
-				} else {
-					return Response.json({ error: 'Failed to fetch people data' }, { status: response.status });
-				}
-			} catch (error) {
-				return Response.json({ error: 'Failed to fetch people data' }, { status: 500 });
+	if (url.pathname === "/api/data/people") {
+		try {
+			const response = await fetch('https://drive.google.com/uc?export=download&id=1IFrFVz_kWsnI04462eTlyYQcdDa7MLd1');
+			if (response.ok) {
+				const data = await response.json();
+				return Response.json(data);
+			} else {
+				return Response.json({ error: 'Failed to fetch people data' }, { status: response.status });
 			}
+		} catch (error) {
+			return Response.json({ error: 'Failed to fetch people data' }, { status: 500 });
 		}
+	}
 
-		if (url.pathname.startsWith("/api/")) {
+	if (url.pathname === "/api/data/home-and-contact") {
+		try {
+			const response = await fetch('https://drive.google.com/uc?export=download&id=1WpXrvt4SLhnmCepmJYtNfC9jVC4QT7XG');
+			if (response.ok) {
+				const data = await response.json();
+				return Response.json(data);
+			} else {
+				return Response.json({ error: 'Failed to fetch home and contact data' }, { status: response.status });
+			}
+		} catch (error) {
+			return Response.json({ error: 'Failed to fetch home and contact data' }, { status: 500 });
+		}
+	}
+
+	if (url.pathname.startsWith("/api/")) {
 			return Response.json({
 				name: "Cloudflare",
 			});

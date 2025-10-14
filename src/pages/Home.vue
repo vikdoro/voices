@@ -26,8 +26,8 @@
 		<section id="project-output">
 			<div class="project-output-content">
 				<HomeOutputItem
-					v-for="item in outputItems"
-					:key="item.slug"
+					v-for="(item, index) in outputItems"
+					:key="`${item.title}-${index}`"
 					:title="item.title"
 					:description="item.description"
 					:coverImage="item.coverImage"

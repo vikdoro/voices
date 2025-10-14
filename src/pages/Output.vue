@@ -5,14 +5,14 @@
             <h1 class="intro">Output</h1>
         </header>
         <ContentCategory
-            v-for="category in categories"
-            :key="category.slug"
+            v-for="(category, index) in categories"
+            :key="`${category.title}-${index}`"
             :slug="category.slug"
             :title="category.title"
         >
             <ContentCard
-                v-for="item in getVisibleItems(category)"
-                :key="item.title"
+                v-for="(item, index) in getVisibleItems(category)"
+                :key="`${item.title}-${item.dateTag}-${index}`"
                 :title="item.title"
                 :label="item.deliveryMode"
                 :link="item.link"
@@ -24,8 +24,9 @@
                 :authors="item.authors"
                 :organisations="item.organisations"
             />
-            <div class="load-more-wrapper" v-if="canShowMore(category)">
-                <CtaButton text="Show more" variant="black" @click="showMore(category)" />
+            <div class="load-more-wrapper" v-if="canShowMore(category) || canShowLess(category)">
+                <CtaButton v-if="canShowMore(category)" text="Show more" variant="black" @click="showMore(category)" />
+                <CtaButton v-if="canShowLess(category)" text="Show less" variant="black" @click="showLess(category)" />
             </div>
         </ContentCategory>
     </section>
@@ -60,9 +61,19 @@ const canShowMore = (category: OutputCategory): boolean => {
     return category.items.length > getVisibleCount(category);
 };
 
+const canShowLess = (category: OutputCategory): boolean => {
+    return getVisibleCount(category) > 6;
+};
+
 const showMore = (category: OutputCategory): void => {
     const current = getVisibleCount(category);
     visibleCounts.value = { ...visibleCounts.value, [category.slug]: current + 6 };
+};
+
+const showLess = (category: OutputCategory): void => {
+    const current = getVisibleCount(category);
+    const newCount = Math.max(6, current - 6);
+    visibleCounts.value = { ...visibleCounts.value, [category.slug]: newCount };
 };
 
 // Use the hash scroll composable
@@ -75,9 +86,10 @@ useHashScroll();
 
 .load-more-wrapper {
     display: flex;
+    gap: 48px;
     margin-top: 16px;
     width: 100%;
-    transform: translateY(1px);
+    transform: translateY(3px);
 }
 
 </style>

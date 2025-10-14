@@ -11,8 +11,8 @@
                 <div class="sub-menu-container">
                     <div class="sub-menu">
                         <RouterLink 
-                            v-for="category in peopleCategories" 
-                            :key="category.slug"
+                            v-for="(category, index) in peopleCategories" 
+                            :key="`${category.title}-${index}`"
                             :to="`/people#${category.slug}`"
                         >
                             {{ category.title }}
@@ -27,8 +27,8 @@
                 <div class="sub-menu-container">
                     <div class="sub-menu">
                         <RouterLink 
-                            v-for="category in outputCategories" 
-                            :key="category.slug"
+                            v-for="(category, index) in outputCategories" 
+                            :key="`${category.title}-${index}`"
                             :to="`/output#${category.slug}`"
                         >
                             {{ category.title }}

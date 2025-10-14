@@ -8,14 +8,14 @@
             </h1>
         </header>
         <ContentCategory
-            v-for="category in categories"
-            :key="category.slug"
+            v-for="(category, index) in categories"
+            :key="`${category.title}-${index}`"
             :slug="category.slug"
             :title="category.title"
         >
             <ContentCard
-                v-for="person in category.people"
-                :key="person.name"
+                v-for="(person, index) in category.people"
+                :key="`${person.name}-${index}`"
                 :label="person.role"
                 :title="person.name"
                 imageFolder="people"

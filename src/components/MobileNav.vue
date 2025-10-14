@@ -37,8 +37,8 @@
                     </h4>
                     <div class="sub-link-container" :class="{ 'expanded': expandedSections.people }">
                         <RouterLink 
-                            v-for="category in peopleCategories" 
-                            :key="category.slug"
+                            v-for="(category, index) in peopleCategories" 
+                            :key="`${category.title}-${index}`"
                             :to="`/people#${category.slug}`" 
                             class="mobile-nav-link sub-link" 
                             @click="closeMenu"
@@ -54,8 +54,8 @@
                     </h4>
                     <div class="sub-link-container" :class="{ 'expanded': expandedSections.output }">
                         <RouterLink 
-                            v-for="category in outputCategories" 
-                            :key="category.slug"
+                            v-for="(category, index) in outputCategories" 
+                            :key="`${category.title}-${index}`"
                             :to="`/output#${category.slug}`" 
                             class="mobile-nav-link sub-link" 
                             @click="closeMenu"

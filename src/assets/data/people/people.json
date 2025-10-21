@@ -62,6 +62,17 @@
 
 			}
 		]
-	}
-	
+	},
+    {
+        "title": "Scientific Advisory Board",
+        "slug": "scientific-advisory-board",    
+        "people": [
+            "Gabor Mihaly Toth – Principal Investigator",
+            "Alina Bothe – Co-Principal Investigator",
+            "Shrikanth Narayanan – Scientific Team",
+            "Marcos da Silveira – Scientific Team",
+            "Cédric Pruski – Scientific Team",
+            "Mohamed Laib – Scientific Team"
+        ]
+        }
 ]

@@ -35,6 +35,10 @@ defineProps<{
     }
 }
 
+.content-category:last-of-type {
+    border-bottom: none;
+}
+
 .scroll-wrapper {
     position: relative;
     overflow: hidden;

@@ -2,10 +2,6 @@
     <section id="people-section" class="white-background">
         <header>
             <h1 class="intro">People</h1>
-            <h1 class="subheader">
-                Voices is a trully interdisciplinary project; historians, computer scientists, 
-                engineers and psychologists work together to address a troubling past
-            </h1>
         </header>
         <ContentCategory
             v-for="(category, index) in categories"
@@ -13,26 +9,33 @@
             :slug="category.slug"
             :title="category.title"
         >
-            <ContentCard
-                v-for="(person, index) in category.people"
-                :key="`${person.name}-${index}`"
-                :label="person.role"
-                :title="person.name"
-                imageFolder="people"
-                :image="person.image"
-                :link="person.link"
-                :description="person.description"
-            />
+            <template v-if="typeof category.people?.[0] === 'string'">
+                <ul class="people-simple-list">
+                    <li v-for="(person, index) in category.people as string[]" :key="`s-${index}`">{{ person }}</li>
+                </ul>
+            </template>
+            <template v-else>
+                <ContentCard
+                    v-for="(person, index) in category.people"
+                    :key="`${(person as PeopleItem).name}-${index}`"
+                    fixed-image-height
+                    :label="(person as PeopleItem).role"
+                    :title="(person as PeopleItem).name"
+                    imageFolder="people"
+                    :image="(person as PeopleItem).image"
+                    :link="(person as PeopleItem).link"
+                    :description="(person as PeopleItem).description"
+                />
+            </template>
         </ContentCategory>
     </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import ContentCategory from '../components/ContentCategory.vue';
 import ContentCard from '../components/ContentCard.vue';
 import categoriesData from '../assets/data/people/people.json';
-import type { PeopleCategory } from '../types';
+import type { PeopleCategory, PeopleItem } from '../types';
 import { useHashScroll } from '../composables/useHashScroll';
 import { useDynamicData } from '../composables/useDynamicData';
 
@@ -45,5 +48,17 @@ useHashScroll();
 <style scoped lang="scss">
 @use '../styles/vars';
 @use '../styles/breakpoints' as *;
+
+.people-simple-list {
+    font-size: 17px;
+    line-height: 22px;
+    margin: 8px 0 0;
+    padding-left: 0;
+    li {
+        margin-bottom: 6px;
+        list-style-type: none;
+        padding-left: 0;
+    }
+}
 
 </style>

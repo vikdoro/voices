@@ -12,17 +12,17 @@
         >
             <ContentCard
                 v-for="(item, index) in getVisibleItems(category)"
-                :key="`${item.title}-${item.dateTag}-${index}`"
+                :key="`${item.title}-${item.eventType}-${index}`"
                 :title="item.title"
-                :label="item.deliveryMode"
+                :label="item.date"
                 :link="item.link"
                 imageFolder="output"
                 :image="item.image"
                 :teaserText="item.teaserText"
-                :dateTag="item.dateTag"
-                :location="item.location"
+                :eventType="item.eventType"
+                :location_general="item.location_general"
                 :authors="item.authors"
-                :organisations="item.organisations"
+                :location_detail="item.location_detail"
             />
             <div class="load-more-wrapper" v-if="canShowMore(category) || canShowLess(category)">
                 <CtaButton v-if="canShowMore(category)" text="Show more" variant="black" @click="showMore(category)" />

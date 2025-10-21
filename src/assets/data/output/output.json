@@ -1,169 +1,122 @@
 [
-  {
-    "slug": "publications",
-    "title": "Publications",
-    "coverImage": "image-1-home",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros id diam.",
-    "items": [
-      {
-        "title": "Virtual Holocaust Memory, a book review",
-        "deliveryMode": "Digital",
-        "teaserText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
-        "authors": "Gabor Mihaly Toth",
-        "dateTag": "5 August, 2025"
-
-      },
-      {
-        "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
-        "deliveryMode": "Digital",
-        "teaserText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
-        "authors": "Gabor Mihaly Toth",
-        "dateTag": "In progress"
-      },
-      {
-        "title": "“Crying like Niagara Falls” : Multimodal Survival Analysis of Holocaust Testimonies",
-        "deliveryMode": "Digital",
-        "teaserText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nunc arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer vel auctor nulla, vitae dictum ante.",
-        "authors": "Gabor Mihaly Toth",
-        "dateTag": "In progress"
-      }
-    ]
-  },
-  {
-    "slug": "talks-workshops",
-    "title": "Talks & Workshops",
-    "coverImage": "image-2-home",
-    "description": "We often give talks and workshops at venues such as scientific conferences, summer schools, and secondary schools.",
-    "items": [
-      {
-        "title": "Multimodal Time Series Analysis",
-        "deliveryMode": "On-site & Online",
-        "location": "Digital Humanities Summer Institute, University of Montreal",
-        "image": "image-2-output.png",
-        "altText": "Image for the event",
-        "dateTag": "June 2026",
-        "authors": "Gabor Mihaly Toth, Mohamed Laib"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "On-site & Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the event",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "On-site & Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the event",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "On-site & Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the event",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "On-site & Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the event",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "On-site & Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the event",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "On-site & Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the event",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      }
-    ]
-  },
-  {
-    "slug": "podcasts-webinars",
-    "title": "Podcasts & Webinars",
-    "coverImage": "image-3-home",
-    "description": "We are keen to achieve a broader impact; we therefore record a podcast series, as well as online webinars.",
-    "items": [
-      {
-        "title": "Textual Data Processing with LLM in the Humanities",
-        "deliveryMode": "Online",
-        "image": "image-3-output.png",
-        "altText": "Image for the online program",
-        "dateTag": "In progress",
-        "authors": "Gabor Mihaly Toth"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the online program",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      }
-    ]
-  },
-  {
-    "slug": "digital-memorial",
-    "title": "Digital Memorial",
-    "coverImage": "image-4-home",
-    "description": "Our project aims to develop a digital memorial that presents the multimodal memory of the Auschwitz Camp. This is a work in progress; we aim to launch it in 2027.",
-    "items": [
-      {
-        "title": "Digital Memorial 1",
-        "deliveryMode": "Online",
-        "image": "image-4-output.png",
-        "altText": "Image for the digital memorial item",
-        "dateTag": "In progress",
-        "authors": "Gabor Mihaly Toth"
-      },
-      {
-        "title": "Fragments from the Past: the Computational Study of Missing Records",
-        "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
-        "deliveryMode": "Online",
-        "image": "image-2-output.png",
-        "altText": "Image for the digital memorial item",
-        "dateTag": "5 August, 2025",
-        "location": "Riga University",
-        "authors": "Gabor Mihaly Toth",
-        "organisations": "Holocaust and Genocide Studies"
-      }
-    ]
-  }
-]
+    {
+      "slug": "publications",
+      "title": "Publications",
+      "coverImage": "image-1-home",
+      "description": "We publish papers, books, and edited volumes that contribute not only to Holocaust and Genocide Studies but also to a wide array of fields such as computational history, digital humanities, and engineering.",
+      "items": [
+        {
+          "title": "Virtual Holocaust Memory, a Book Review",
+          "teaserText": "In recent decades, the memory of the Holocaust has found its place in the virtual world. By presenting the recently published monograph by Matthew Boswell and Antony Rowland, this article explores this new place.",
+          "authors": "Gabor Mihaly Toth",
+          "date": "Forthcoming"
+        },
+        {
+          "title": "Crying like a Baby : Multimodal Survival Analysis of Holocaust Testimonies",
+          "date": "Forthcoming",
+          "teaserText": "Crying like a baby is a phrase we often hear in survivors' testimonies. But how often do women and men cry in their testimonies? Most importantly, which memories cause them to cry? This paper searches for answers.",
+          "authors": "Gabor Mihaly Toth et al."
+        }
+      ]
+    },
+    {
+      "slug": "talks-workshops",
+      "title": "Lectures & Conferences & Workshops",
+      "coverImage": "image-2-home",
+      "description": "We aim for a broad scientific impact. We often present our research at international and national conferences. We organize workshops and participate in seminars and study days.",
+      "items": [
+        {
+          "title": "Multimodal Time Series Analysis",
+          "date": "15 - 19 June 2026",
+          "location_general": "University of Montreal",
+          "image": "Montreal-output.jpg",
+          "altText": "Image for the event",
+          "eventType": "Summer school",
+          "authors": "Gabor Mihaly Toth and Mohamed Laib",
+          "location_detail": "Digital Humanities Summer Institute"
+  
+        },
+        {
+          "title": "The Role of Internment Camps in the Experience of Deportations in Western Europe",
+          "link": "https://www.uni.lu/c2dh-en/news/cfp-transit-zones/",
+          "date": "26-27 February, 2026",
+          "image": "cinquefontaine-output.jpeg",
+          "altText": "Image for the event",
+          "eventType": "Conference paper",
+          "location_general": "Cinqfontaines (LU)",
+          "authors": "Alina Bothe et al.",
+          "location_detail": "Conference: Transit Zone"
+        },
+        {
+          "title": "Crying like a Baby : Multimodal Survival Analysis of Holocaust Testimonies",
+          "link": "https://2025.computational-humanities-research.org/",
+          "date": "10 December 2025",
+          "image": "belval-output.jpg",
+          "altText": "Image for the event",
+          "eventType": "Conference paper",
+          "location_general": "University of Luxembourg",
+          "authors": "Gabor Mihaly Toth et al.",
+          "location_detail": "Sixth conference on computational humanities research (CHR 2025)"
+        },
+        {
+          "title": "Testimonies through the Lenses of Multimodality",
+          "link": "https://www.vwi.ac.at/",
+          "date": "28 November, 2025",
+          "image": "wiesenthal-output.jpg",
+          "altText": "Image for the event",
+          "eventType": "Workshop",
+          "location_general": "Wien",
+          "authors": "Eva Kovacs and Gabor Mihaly Toth",
+          "location_detail": "Vienna Wiesenthal Institute for Holocaust Studies"
+        },
+        {
+          "title": "Fragments from the Past: the Computational Study of Missing Records",
+          "link": "https://www.digitalhumanities.lv/bssdh/2025/lectures-and-workshops/",
+          "date": "5 August, 2025",
+          "image": "riga-output.jpeg",
+          "altText": "Image for the event",
+          "eventType": "Lecture",
+          "location_general": "Riga University",
+          "authors": "Gabor Mihaly Toth",
+          "location_detail": "Baltic DH Summer School"
+        }
+      ]
+    },
+    {
+      "slug": "podcasts-webinars",
+      "title": "Outreach",
+      "coverImage": "image-3-home",
+      "description": "Outreach and social impact are at the core of the VOICES project. We often present our research at secondary schools. We record webinars and podcasts.",
+      "items": [
+        {
+          "title": "What does a Computational Historian do?",
+          "date": "23 October, 2025",
+          "image": "lux-output.jpg",
+          "altText": "Image for the online program",
+          "eventType": "Outreach",
+          "location_general": "Luxembourg City",
+          "authors": "Gabor Mihaly Toth",
+          "location_detail": "St George's International School"
+        },
+        {
+          "title": "What does a Researcher in AI do?",
+          "date": "14 October, 2025",
+          "image": "lux_2-output.jpg",
+          "altText": "Image for the online program",
+          "eventType": "Outreach",
+          "location_general": "Luxembourg City",
+          "authors": "Cedric Pruski",
+          "location_detail": "St George's International School"
+        },
+        {
+          "title": "Textual Data Processing with LLM in the Humanities",
+          "date": "April 2025",
+          "link": "https://www.youtube.com/playlist?list=PLEgLiY_3gL-hNfDKFYGqF_fDQY4A6OY2o",
+          "image": "lux_uni-output.jpg",
+          "altText": "Image for the online program",
+          "eventType": "Webinar",
+          "authors": "Gabor Mihaly Toth"
+        }
+      ]
+    }
+  ]

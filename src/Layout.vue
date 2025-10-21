@@ -25,34 +25,34 @@
         </main>
     </div>
     <footer>
-        <div class="footer-section">
-            <h2>Participating institutions</h2>
-            <div class="logo-container-left-aligned">
-                <img src="/institutions/C2DH.svg" alt="Luxembourg Centre for Contemporary and Digital History" class="institution-logo">
-                <img src="/institutions/Freie_Berlin_logo.svg" alt="Freie Universität Berlin" class="institution-logo">
-                <img src="/institutions/List-logo.svg" alt="Luxembourg Institute of Science and Technology" class="institution-logo">
-                <img src="/institutions/USC.svg" alt="USC" class="institution-logo">
-                <img src="/institutions/USC_Viterbi.svg" alt="USC Viterbi" class="institution-logo">
-                <img src="/institutions/Selma_Stern.svg" alt="Selma Stern Zentrum" class="institution-logo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Participating institutions</h2>
+                <div class="logo-container-left-aligned">
+                    <a v-for="(inst, idx) in institutions?.participating || []" :key="`p-${idx}`" :href="inst.url" target="_blank" rel="noopener noreferrer">
+                        <img :src="inst.src" :alt="inst.alt" class="institution-logo">
+                    </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h2>Funded by</h2>
+                    <div class="logo-container-left-aligned">
+                        <a v-for="(inst, idx) in institutions?.funding || []" :key="`f-${idx}`" :href="inst.url" target="_blank" rel="noopener noreferrer">
+                            <img :src="inst.src" :alt="inst.alt" class="institution-logo">
+                        </a>
+
                 </div>
             </div>
             <div class="footer-section">
-                <h2>Funded by</h2>
-                <div class="logo-container-left-aligned">
-                    <img src="/institutions/FNR.svg" alt="FNR" class="institution-logo">
-                    <img src="/institutions/DFG.svg" alt="DFG" class="institution-logo">
-
+                <div id="contact">
+                    <h2>Contact</h2>
+                    <a :href="`mailto:${contactData?.email}`">email: {{ contactData?.email }}</a>
+                </div>
+                <hr />
             </div>
-        </div>
-        <div class="footer-section">
-            <div id="contact">
-                <h2>Contact</h2>
-                <a :href="`mailto:${contactData?.email}`">email: {{ contactData?.email }}</a>
+            <div class="footer-bottom">
+                <div>Copyright Université du Luxembourg {{ new Date().getFullYear() }}. All rights reserved</div>
             </div>
-            <hr />
-        </div>
-        <div class="footer-bottom">
-            <div>Copyright Université du Luxembourg {{ new Date().getFullYear() }}. All rights reserved</div>
         </div>
     </footer>
 
@@ -68,13 +68,14 @@ import { multiplyDimensions } from './utils/utils';
 import { updateHashFromScroll } from './utils/scroll';
 import { useNavigationData } from './composables/useNavigationData';
 import { useDynamicData } from './composables/useDynamicData';
-import homeContactData from './assets/data/home-and-contact.json';
+import homeContactData from './assets/data/home-contact-institutions.json';
 
 const route = useRoute();
 const { clearHomeScrollPosition } = useNavigationData();
 
 // Load contact data
-const { data: homeContactContent } = useDynamicData(homeContactData, 'home-and-contact');
+const { data: homeContactContent } = useDynamicData(homeContactData, 'home-contact-institutions');
+const institutions = computed(() => homeContactContent.value.institutions);
 const contactData = computed(() => homeContactContent.value.contact);
 
 // Manage body classes based on current route
@@ -222,13 +223,40 @@ onBeforeUnmount(() => {
 @use './styles/breakpoints' as *;
 
 footer {
-    width: calc(100% - 48px);
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100vw;
     background-image: url('/assets/background/footer-bg.png');
+    background-image: image-set(
+        './assets/background/footer-bg.webp' 1x,
+        './assets/background/footer-bg@2x.webp' 2x,
+        './assets/background/footer-bg@3x.webp' 3x
+    );
     background-position: bottom center;
     background-repeat: repeat-x;
     background-size: 1920px 720px;
+
+    .footer-content {
+        width: calc(100% - 48px);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: $desktop) {
+        background-image: image-set(
+            './assets/background/footer-bg-s.webp' 1x,
+            './assets/background/footer-bg-s@2x.webp' 2x,
+            './assets/background/footer-bg-s@3x.webp' 3x
+        );
+        background-size: 1330px auto;
+    }
+
+    @media (max-width: $mobile) {
+        background-image: image-set(
+            './assets/background/footer-bg-xs.webp' 1x,
+            './assets/background/footer-bg-xs@2x.webp' 2x,
+            './assets/background/footer-bg-xs@3x.webp' 3x
+        );
+        background-size: 780px auto;
+    }
 
     h2 {
         margin: 0 0 24px 0;
@@ -238,55 +266,57 @@ footer {
         }
     }
 
-    .footer-section {
-        max-width: 1600px;
-        margin: 0 auto;
+    .footer-content {
+        .footer-section {
+            max-width: 1600px;
+            margin: 0 auto;
 
-        &:not(:first-child) {
-            margin-top: 56px;
-        }
+            &:not(:first-child) {
+                margin-top: 56px;
+            }
 
-        .logo-container-left-aligned {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 48px;
+            .logo-container-left-aligned {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 48px;
 
-            > * {
-                flex: 0 0 auto;
+                > * {
+                    flex: 0 0 auto;
+                }
             }
         }
-    }
 
-    .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 200px 0 24px;
-        font-size: 12px;
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 200px 0 24px;
+            font-size: 12px;
 
-        a {
-            text-decoration: underline;
-        }
-    }
-
-    #contact {
-        display: flex;
-        flex-direction: column;
-        margin-top: 280px;
-
-        @media (max-width: $tablet) {
-            margin-top: 200px;
+            a {
+                text-decoration: underline;
+            }
         }
 
-        @media (max-width: $mobile) {
-            margin-top: 150px;
-        }
+        #contact {
+            display: flex;
+            flex-direction: column;
+            margin-top: 280px;
 
-        a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            @media (max-width: $tablet) {
+                margin-top: 200px;
+            }
+
+            @media (max-width: $mobile) {
+                margin-top: 150px;
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
         }
     }
 }

@@ -67,6 +67,7 @@ const widthMap = {
   // Background images
   'background-s': [1333],
   'background': [1920, 1330, 780],
+  'footer-bg': [1920, 1330, 780],
   
   // Default fallback
   'default': [400, 800, 1200]

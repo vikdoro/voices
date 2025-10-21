@@ -4,11 +4,11 @@
             <div class="link-container">
                 <RouterLink to="/" @click="handleHomeClick">Home</RouterLink>
             </div>
-            <div class="link-container extendible">
-                <RouterLink to="/people">
+            <div class="link-container" :class="{ extendible: peopleCategories.length > 1 }">
+                <RouterLink :to="peopleCategories.length === 1 ? `/people#${peopleCategories[0].slug}` : '/people'">
                     <span>People</span>
                 </RouterLink>
-                <div class="sub-menu-container">
+                <div v-if="peopleCategories.length > 1" class="sub-menu-container">
                     <div class="sub-menu">
                         <RouterLink 
                             v-for="(category, index) in peopleCategories" 
@@ -20,11 +20,11 @@
                     </div>
                 </div>
             </div>
-            <div class="link-container extendible">
-                <RouterLink to="/output">
+            <div class="link-container" :class="{ extendible: outputCategories.length > 1 }">
+                <RouterLink :to="outputCategories.length === 1 ? `/output#${outputCategories[0].slug}` : '/output'">
                     <span>Output</span>
                 </RouterLink>
-                <div class="sub-menu-container">
+                <div v-if="outputCategories.length > 1" class="sub-menu-container">
                     <div class="sub-menu">
                         <RouterLink 
                             v-for="(category, index) in outputCategories" 

@@ -31,17 +31,17 @@ export default {
 		}
 	}
 
-	if (url.pathname === "/api/data/home-and-contact") {
+	if (url.pathname === "/api/data/home-contact-institutions") {
 		try {
 			const response = await fetch('https://drive.google.com/uc?export=download&id=1WpXrvt4SLhnmCepmJYtNfC9jVC4QT7XG');
 			if (response.ok) {
 				const data = await response.json();
 				return Response.json(data);
 			} else {
-				return Response.json({ error: 'Failed to fetch home and contact data' }, { status: response.status });
+				return Response.json({ error: 'Failed to fetch home/contact/institutions data' }, { status: response.status });
 			}
 		} catch (error) {
-			return Response.json({ error: 'Failed to fetch home and contact data' }, { status: 500 });
+			return Response.json({ error: 'Failed to fetch home/contact/institutions data' }, { status: 500 });
 		}
 	}
 

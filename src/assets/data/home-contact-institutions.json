@@ -1,0 +1,32 @@
+{
+  "home": {
+    "intro": "VOICES FROM Auschwitz",
+    "subheaderStart": "Unlocking Collective Memory with",
+    "subheaderMiddleNoWrapText": "the Multimodal Analysis",
+    "subheaderEnd": "of Survivor Testimonies",
+    "ctaButton": "START READING",
+    "about": {
+      "paragraph": "Rose and Jack came from very different walks of life. Unexpectedly, around 1944 their paths crossed. They were both deported to the Auschwitz concentration camp. They were in the same place at the same time. Later, they remembered the past differently. Both Rose and Jack gave oral history testimonies in the 1990s, but their voices, eyes, and gestures told different stories.\n\nInspired by these differences, we compare how thousands of male and female survivors remembered Auschwitz. We study the whole spectrum of human communication, including voice, eye contact, and posture. We are historians, computer scientists, engineers, and statisticians. To explore the memories of a troubled past recalled by Rose, Jack, and many other survivors, we harness signal processing, human and artificial intelligence, and the power of mathematics.\n\nOur project is generously funded by the Luxembourg National Research Fund (FNR) and the German Research Foundation (DFG)."
+    },
+    "closingText": "The people you see in these photos shared the fate of Rose and Jack, though most of them did not survive. Our overall goal is to memorialize them."
+  },
+  "contact": {
+    "email": "university@uni.lu"
+  },
+  "institutions": {
+    "participating": [
+      { "src": "/institutions/C2DH.svg", "alt": "Luxembourg Centre for Contemporary and Digital History", "url": "https://www.uni.lu/c2dh-en/" },
+      { "src": "/institutions/Freie_Berlin_logo.svg", "alt": "Freie Universität Berlin", "url": "https://www.fu-berlin.de/en/index.html" },
+      { "src": "/institutions/List-logo.svg", "alt": "Luxembourg Institute of Science and Technology", "url": " https://www.list.lu/" },
+      { "src": "/institutions/USC.svg", "alt": "USC", "url": "https://www.usc.edu/" },
+      { "src": "/institutions/USC_Viterbi.svg", "alt": "USC Viterbi", "url": "https://viterbischool.usc.edu/" },
+      { "src": "/institutions/Selma_Stern.svg", "alt": "Selma Stern Zentrum", "url": "https://www.selma-stern-zentrum.de/" }
+    ],
+    "funding": [
+      { "src": "/institutions/FNR.svg", "alt": "FNR", "url": "https://www.fnr.lu/" },
+      { "src": "/institutions/DFG.svg", "alt": "DFG", "url": "https://www.dfg.de/" }
+    ]
+  }
+}
+
+

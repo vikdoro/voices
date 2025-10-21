@@ -153,10 +153,4 @@ const handleClick = () => {
     }
 }
 
-@media (max-width: $mobile) {
-    .home-output-item-description-text {
-        font-size: 14px;
-    }
-}
-
 </style>

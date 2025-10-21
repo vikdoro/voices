@@ -1,6 +1,6 @@
 <template>
 <a :href="link" class="content-card" :class="{ 'no-link': !link }" target="_blank">
-    <div v-if="imageFolder && image" class="content-card-image-container">
+    <div v-if="imageFolder && image" class="content-card-image-container" :class="{ 'fixed-image': fixedImageHeight }">
         <ResponsivePicture 
             base-path="data"
             :image="`${imageFolder}/images/${image}`"
@@ -9,19 +9,19 @@
             :dimensions="multiplyDimensions([407, 246])"
             sizes="407px, (min-width: 1028px) 246px"
         />
-        <div v-if="dateTag" class="image-overlay-tag" :class="{ 'highlighted-date-tag': dateTag === 'In progress' }">{{ dateTag }}</div>
+        <div v-if="eventType" class="image-overlay-tag" :class="{ 'highlighted-date-tag': eventType === 'In progress' }">{{ eventType }}</div>
     </div>
     <div v-else-if="teaserText" class="content-card-missing-image-text">{{ teaserText }}</div>
     <div class="labels-above-title">
         <div v-if="label" class="content-card-label">{{ label }}</div>
-        <div v-if="location" class="content-card-location">{{ location }}</div>
+        <div v-if="location_general" class="content-card-location">{{ location_general }}</div>
     </div>
     <h3>{{ title }}</h3>
     <h4 v-if="description">{{ description }}</h4>
     <div v-if="authors" class="content-card-authors">{{ authors }}</div>
-    <hr v-if="authors && organisations" />
-    <div v-if="organisations" class="content-card-organisations">{{ organisations }}</div>
-    <div v-if="link" class="content-card-link">{{ linkPath }}</div>
+    <hr v-if="authors && location_detail" />
+    <div v-if="location_detail" class="content-card-location-detail">{{ location_detail }}</div>
+    <div v-if="link" class="content-card-link">{{ displayLink }}</div>
     <div class="content-card-frame">
         <img src="/icons/content-card-corner.svg" alt="content-card-corner" class="content-card-corner-top">
         <div class="fill-container"></div>
@@ -40,13 +40,17 @@ import { multiplyDimensions } from '@/utils/utils';
 
 const props = defineProps<OutputCardContent>();
 
-const linkPath = computed(() => {
+const displayLink = computed(() => {
     if (!props.link) return '';
     try {
         const url = new URL(props.link);
-        return url.pathname;
+        const hostname = url.hostname.replace(/^www\./, '');
+        const full = `${hostname}${url.pathname}${url.search}${url.hash}`;
+        return full.endsWith('/') ? full.slice(0, -1) : full;
     } catch {
-        return props.link;
+        // Fallback: strip protocol and leading www from raw string
+        const stripped = props.link.replace(/^https?:\/\/(www\.)?/i, '');
+        return stripped.endsWith('/') ? stripped.slice(0, -1) : stripped;
     }
 });
 
@@ -135,14 +139,14 @@ const linkPath = computed(() => {
 
     }
 
-    .content-card-organisations {
+    .content-card-location-detail {
         font-size: 14px;
     }
 
     .content-card-link {
         font-size: 14px;
         text-decoration: underline;
-        margin-top: 2px;
+        margin-top: 4px;
     }
 
 
@@ -202,6 +206,15 @@ const linkPath = computed(() => {
             object-fit: cover;
             object-position: center;
         }
+
+        &.fixed-image {
+            height: 250px;
+
+            .content-card-image {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
     }
 
     .content-card-missing-image-text {
@@ -209,6 +222,7 @@ const linkPath = computed(() => {
         color: #fff;
         padding: 12px;
         margin-bottom: 16px;
+        min-height: 124px;
     }
 
     h3 {

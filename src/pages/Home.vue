@@ -13,14 +13,11 @@
 		</section>
 
 		<section id="about" class="about-section">
-			<div class="about-content">
-				<p>
-					{{ homeContent?.about.paragraph1 }}
-				</p>
-				<p>
-					{{ homeContent?.about.paragraph2 }}
-				</p>
-			</div>
+            <div class="about-content">
+                <p class="multiline">
+                    {{ homeContent?.about.paragraph }}
+                </p>
+            </div>
 		</section>
 
 		<section id="project-output">
@@ -46,7 +43,7 @@ import { ref, computed } from 'vue';
 import HomeOutputItem from '../components/HomeOutputItem.vue';
 import CtaButton from '../components/CtaButton.vue';
 import outputData from '../assets/data/output/output.json';
-import homeContactData from '../assets/data/home-and-contact.json';
+import homeContactData from '../assets/data/home-contact-institutions.json';
 import { scrollToSection } from '../utils/scroll';
 import { useHashScroll } from '../composables/useHashScroll';
 import { useDynamicData } from '../composables/useDynamicData';
@@ -72,7 +69,7 @@ interface HomeContent {
 }
 
 const { data: outputItems } = useDynamicData<OutputItem[]>(outputData, 'output');
-const { data: homeContactContent } = useDynamicData(homeContactData, 'home-and-contact');
+const { data: homeContactContent } = useDynamicData(homeContactData, 'home-contact-institutions');
 const homeContent = computed(() => homeContactContent.value.home);
 
 // Use the hash scroll composable
@@ -155,15 +152,20 @@ section#about {
         margin: 0 auto;
         
         p {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 24px;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
             line-height: 22px;
 
-            @media (max-width: $desktop) {
-                font-size: 14px;
+            @media (max-width: $tablet) {
+                font-size: 16px;
+                line-height: 22px;
             }
+        }
+
+        p.multiline {
+            white-space: pre-line;
         }
     }
 }
@@ -178,6 +180,14 @@ section#project-output {
 .closing-text {
     max-width: 915px;
     text-align: center;
+    font-size: 18px;
+    line-height: 25px;
     margin: 0 auto;
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
 }
 </style>

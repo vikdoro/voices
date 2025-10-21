@@ -1,0 +1,67 @@
+[
+	{
+		"title": "Team Members",
+        "slug": "team-members",
+		"people": [
+			{
+				"name": "Gabor Mihaly Toth",
+				"role": "Principal Investigator",
+				"description": "Gabor is a computational historian at the University of Luxembourg; he conceptualised the VOICES project and authored the proposal.",
+				"image": "Gabor_Mihaly_Toth-people.png",
+                "altText": "Photo of the team member",
+                "link": "https://www.uni.lu/c2dh-en/people/gabor-mihaly-toth/"
+			},
+			{
+				"name": "Alina Bothe",
+				"role": "Co-Principal Investigator",
+				"description": "Alina is a historian at the Free University, Berlin; she is an expert of the Holocaust with focus on survival testimonies.",
+				"image": "Gabor_Mihaly_Toth-people.png",
+                "altText": "Photo of the team member",
+                "link": "https://www.oei.fu-berlin.de/geschichte/Team/Abgeschlossene-Dissertationen1/Bothe/index.html"
+                
+			},
+			{
+				"name": "Shrikanth Narayanan",
+				"role": "Scientific Team",
+				"description": "Shri is an engineer scientist at the University of Southern California; he is a pioneer of behavioral signal processing.",
+				"image": "https://www.usc.edu/wp-content/uploads/2024/02/ShriNarayananan-768x768.jpg",
+                "altText": "Photo of the team member",
+                "link": "https://www.usc.edu/profile/shrikanth-narayanan/"
+			},
+            {
+				"name": "Marcos da Silveira",
+				"role": "Scientific Team",
+				"description": " Marcos is a researcher at the Luxembourg Institute of Science and Technology (LIST), specializing in making knowledge-based systems more collaborative and understandable.",
+				"image": "https://drive.google.com/file/d/1Ag9pXV2hL0XPrKvpsFhqWtApM3aS67rj/view?usp=drive_link",
+                "altText": "Photo of the team member",
+                "link":"https://marcao02.github.io/#about"
+			},
+			{
+				"name": "Cédric Pruski",
+				"role": "Scientific Team",
+				"description": "Cedric is a computer scientist at the Luxembourg Institute of Science and Technology. He works on artificial intelligence.",
+				"image": "https://drive.google.com/file/d/1Sl7muqdirYqPo2sVzfOQjSXjEbC1Ueyl/view?usp=drive_link",
+                "altText": "Photo of the team member",
+                "link" : "https://www.list.lu/"
+			},
+			{
+				"name": "Mohamed Laib",
+				"role": "Scientific Team",
+				"description": "Mohamed is a statistician at the Luxembourg Institute of Science and Technology; his specialty is data science.",
+				"image": "https://drive.google.com/file/d/1Tlda_q0vMIr2unrxeC-r1nMIgWmA2zqL/view?usp=drive_link",
+                "altText": "Photo of the team member",
+                "link" : "https://mlaib.net/"
+			},
+			{
+				"name": "Marcus Ma",
+				"role": "Scientific Team",
+				"description": "Marcus is a computer scientist at the University of Southern California. He is interested in bridging the gap between how language models and humans understand language.",
+				"image": "https://drive.google.com/file/d/1QcbFbBn4dZcJdU6jagWd4PAzrk_1bbRg/view?usp=drive_link",
+                "altText": "Photo of the team member",
+                "link": "https://mamarcus64.github.io/"
+
+			}
+		]
+	}
+	
+]

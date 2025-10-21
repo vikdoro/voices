@@ -30,6 +30,14 @@ npm run deploy
 
 Deployment uses local Cloudflare auth. Only users with the required Cloudflare permissions can deploy.
 
+### Demo mode
+
+Use demo mode to load content from Google Drive instead of bundled assets.
+
+- Enable: append `?demo=true`to the site URL, e.g. `http://localhost:1234/?demo=1`
+- Behavior: data is fetched via `/api/data/{output|people|home-and-contact}`
+- To see the logs about the fetch request, open the Chrome Dev Tools (macOS: Cmd+Option+I, Windows: Ctrl+Shif+I) and select the Network tab
+
 ### Add content
 
 Project output items are in `src/assets/data/output`.
@@ -37,6 +45,8 @@ Project output items are in `src/assets/data/output`.
 People items are in `src/assets/data/people`.
 
 Define items in the JSON files and put the images in the images folder.
+
+
 
 ### Convert images
 

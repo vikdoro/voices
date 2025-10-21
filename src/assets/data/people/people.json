@@ -6,9 +6,10 @@
 			{
 				"name": "Gabor Mihaly Toth",
 				"role": "Principal Investigator",
-				"description": "Gabor is a computational historian at the University of Luxembourg; this project was conceptualised and submitted by him.",
+				"description": "Gabor is a computational historian at the University of Luxembourg; he conceptualised the VOICES project and authored the proposal.",
 				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
+                "altText": "Photo of the team member",
+                "link": "https://www.uni.lu/c2dh-en/people/gabor-mihaly-toth/"
 			},
 			{
 				"name": "Alina Bothe",
@@ -23,78 +24,44 @@
 				"name": "Shrikanth Narayanan",
 				"role": "Scientific Team",
 				"description": "Shri is an engineer scientist at the University of Southern California; he is a pioneer of behavioral signal processing.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
+				"image": "Sh_Na-people.jpg",
+                "altText": "Photo of the team member",
+                "link": "https://www.usc.edu/profile/shrikanth-narayanan/"
 			},
             {
 				"name": "Marcos da Silveira",
 				"role": "Scientific Team",
-				"description": "Marcos is a computer scientist at the Luxembourg Institute of Science and Technology; he is specialised in knowledge engineering. ",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
+				"description": " Marcos is a researcher at the Luxembourg Institute of Science and Technology (LIST), specializing in making knowledge-based systems more collaborative and understandable.",
+				"image": "Da_Silveira-people.jpg",
+                "altText": "Photo of the team member",
+                "link":"https://marcao02.github.io/#about"
 			},
 			{
 				"name": "Cédric Pruski",
 				"role": "Scientific Team",
 				"description": "Cedric is a computer scientist at the Luxembourg Institute of Science and Technology. He works on artificial intelligence.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
+				"image": "CPr-people.jpg",
+                "altText": "Photo of the team member",
+                "link" : "https://www.list.lu/"
 			},
 			{
 				"name": "Mohamed Laib",
 				"role": "Scientific Team",
 				"description": "Mohamed is a statistician at the Luxembourg Institute of Science and Technology; his specialty is data science.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
-			}
-		]
-	},
-	{
-		"title": "Scientific Advisory Board",
-        "slug": "scientific-advisory-board",
-		"people": [
-			{
-				"name": "Gabor Mihaly Toth",
-				"role": "Principal Investigator",
-				"description": "Gabor is a computational historian at the University of Luxembourg; this project was conceptualised and submitted by him.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
+				"image": "mohamed-people.jpeg",
+                "altText": "Photo of the team member",
+                "link" : "https://mlaib.net/"
 			},
 			{
-				"name": "Alina Bothe",
-				"role": "Co-Principal Investigator",
-				"description": "Alina is a historian at the Free University, Berlin; she is an expert of the Holocaust with focus on survival testimonies.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
-			},
-			{
-				"name": "Shrikanth Narayanan",
+				"name": "Marcus Ma",
 				"role": "Scientific Team",
-				"description": "Shri is an engineer scientist at the University of Southern California; he is a pioneer of behavioral signal processing.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
-			},
-            {
-				"name": "Marcos da Silveira",
-				"role": "Scientific Team",
-				"description": "Marcos is a computer scientist at the Luxembourg Institute of Science and Technology; he is specialised in knowledge engineering. ",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
-			},
-			{
-				"name": "Cédric Pruski",
-				"role": "Scientific Team",
-				"description": "Cedric is a computer scientist at the Luxembourg Institute of Science and Technology. He works on artificial intelligence.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
-			},
-			{
-				"name": "Mohamed Laib",
-				"role": "Scientific Team",
-				"description": "Mohamed is a statistician at the Luxembourg Institute of Science and Technology; his specialty is data science.",
-				"image": "Gabor_Mihaly_Toth-people.png",
-                "altText": "Photo of the team member"
+				"description": "Marcus is a computer scientist at the University of Southern California. He is interested in bridging the gap between how language models and humans understand language.",
+				"image": "Marcus-people.jpg",
+                "altText": "Photo of the team member",
+                "link": "https://mamarcus64.github.io/"
+
 			}
 		]
 	}
+	
 ]

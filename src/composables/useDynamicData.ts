@@ -8,7 +8,7 @@ const getGoogleDriveUrl = (publicPath: string): string | null => {
     const pathMap: Record<string, string> = {
         'output': '/api/data/output',
         'people': '/api/data/people',
-        'home-and-contact': '/api/data/home-and-contact'
+        'home-contact-institutions': '/api/data/home-contact-institutions'
     };
     
     return pathMap[publicPath] || null;

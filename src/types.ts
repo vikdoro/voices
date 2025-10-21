@@ -9,20 +9,20 @@ export interface OutputCategory {
 export interface OutputItem {
     title: string;
     link?: string;
-    deliveryMode?: string;
-    dateTag?: string;
+    date?: string;
+    eventType?: string;
     image?: string;
     altText?: string;
-    location?: string;
+    location_general?: string;
     authors?: string;
-    organisations?: string;
+    location_detail?: string;
     teaserText?: string;
 }
 
 export interface PeopleCategory {
     title: string;
     slug: string;
-    people: PeopleItem[];
+    people: (PeopleItem | string)[];
 }
 
 export interface PeopleItem {
@@ -40,9 +40,10 @@ export interface OutputCardContent {
     imageFolder?: string;
     image?: string;
     teaserText?: string;
-    dateTag?: string;
-    location?: string;
+    eventType?: string;
+    location_general?: string;
     label?: string;
     authors?: string;
-    organisations?: string;
+    location_detail?: string;
+    fixedImageHeight?: boolean;
 }

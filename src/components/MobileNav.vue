@@ -32,37 +32,59 @@
                 <RouterLink to="/" class="mobile-nav-link" @click="handleHomeClick">Home</RouterLink>
                 
                 <div class="mobile-nav-section">
-                    <h4 @click="toggleSection('people')" :class="{ 'expanded': expandedSections.people }">
-                        People
-                    </h4>
-                    <div class="sub-link-container" :class="{ 'expanded': expandedSections.people }">
+                    <template v-if="peopleCategories.length <= 1">
                         <RouterLink 
-                            v-for="(category, index) in peopleCategories" 
-                            :key="`${category.title}-${index}`"
-                            :to="`/people#${category.slug}`" 
-                            class="mobile-nav-link sub-link" 
+                            :to="peopleCategories.length === 1 ? `/people#${peopleCategories[0].slug}` : '/people'"
+                            class="mobile-nav-link"
                             @click="closeMenu"
                         >
-                            <span>{{ category.title }}</span>
+                            People
                         </RouterLink>
-                    </div>
+                    </template>
+                    <template v-else>
+                        <h4 @click="toggleSection('people')" :class="{ 'expanded': expandedSections.people }">
+                            People
+                        </h4>
+                        <div class="sub-link-container" :class="{ 'expanded': expandedSections.people }">
+                            <RouterLink 
+                                v-for="(category, index) in peopleCategories" 
+                                :key="`${category.title}-${index}`"
+                                :to="`/people#${category.slug}`" 
+                                class="mobile-nav-link sub-link" 
+                                @click="closeMenu"
+                            >
+                                <span>{{ category.title }}</span>
+                            </RouterLink>
+                        </div>
+                    </template>
                 </div>
                 
                 <div class="mobile-nav-section">
-                    <h4 @click="toggleSection('output')" :class="{ 'expanded': expandedSections.output }">
-                        Output
-                    </h4>
-                    <div class="sub-link-container" :class="{ 'expanded': expandedSections.output }">
+                    <template v-if="outputCategories.length <= 1">
                         <RouterLink 
-                            v-for="(category, index) in outputCategories" 
-                            :key="`${category.title}-${index}`"
-                            :to="`/output#${category.slug}`" 
-                            class="mobile-nav-link sub-link" 
+                            :to="outputCategories.length === 1 ? `/output#${outputCategories[0].slug}` : '/output'"
+                            class="mobile-nav-link"
                             @click="closeMenu"
                         >
-                            {{ category.title }}
+                            Output
                         </RouterLink>
-                    </div>
+                    </template>
+                    <template v-else>
+                        <h4 @click="toggleSection('output')" :class="{ 'expanded': expandedSections.output }">
+                            Output
+                        </h4>
+                        <div class="sub-link-container" :class="{ 'expanded': expandedSections.output }">
+                            <RouterLink 
+                                v-for="(category, index) in outputCategories" 
+                                :key="`${category.title}-${index}`"
+                                :to="`/output#${category.slug}`" 
+                                class="mobile-nav-link sub-link" 
+                                @click="closeMenu"
+                            >
+                                {{ category.title }}
+                            </RouterLink>
+                        </div>
+                    </template>
                 </div>
                 
                 <button @click="scrollToContact" class="mobile-nav-link">Contact</button>

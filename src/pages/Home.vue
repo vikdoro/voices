@@ -75,7 +75,7 @@ const homeContent = computed(() => homeContactContent.value.home);
 // Use the hash scroll composable
 useHashScroll();
 
-const scrollToAbout = () => scrollToSection('about', 1200);
+const scrollToAbout = () => scrollToSection('about', 1200, true);
 </script>
 
 <style scoped lang="scss">

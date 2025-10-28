@@ -50,8 +50,9 @@ function smoothScrollTo(start: number, target: number, duration: number): Promis
  * Smoothly scrolls to an element with the specified ID, accounting for navigation height
  * @param id - The ID of the element to scroll to
  * @param duration - Duration of the scroll animation in milliseconds (default: 800)
+ * @param center - Whether to center the element in the viewport (default: false)
  */
-export function scrollToSection(id: string, duration?: number): void {
+export function scrollToSection(id: string, duration?: number, center?: boolean): void {
     const element = document.getElementById(id);
     if (element) {
         // Get the element's position relative to the viewport
@@ -62,7 +63,19 @@ export function scrollToSection(id: string, duration?: number): void {
         const navHeight = nav ? nav.getBoundingClientRect().height : 0;
         
         // Calculate the target scroll position with offset
-        const targetScrollTop = window.pageYOffset + rect.top - navHeight;
+        let targetScrollTop: number;
+        
+        if (center) {
+            // Center the element in the viewport
+            const elementHeight = rect.height;
+            const viewportHeight = window.innerHeight;
+            const centerOffset = (viewportHeight - elementHeight) / 2;
+            targetScrollTop = window.pageYOffset + rect.top - centerOffset;
+        } else {
+            // Position element at top with navigation offset
+            targetScrollTop = window.pageYOffset + rect.top - navHeight;
+        }
+        
         const startScrollTop = window.pageYOffset;
     
         if (duration === 0) {

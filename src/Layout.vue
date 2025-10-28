@@ -108,15 +108,17 @@ type GlassConfig = {
     range: number; // scroll range in px to reach target
 };
 
-const glassConfig: Record<string, GlassConfig> = {
-    'glass-1': { x: -70, y: 90, range: 2000 },
+const getGlassConfig = (): Record<string, GlassConfig> => ({
+    'glass-1': { x: -70, y: Math.max(90, window.innerHeight - 683 - 350), range: 2000 },
     'glass-2': { x: -45, y: -65, range: 1500 },
     'glass-3': { x: -25, y: -50, range: 750 },
     'glass-4': { x: -225, y: 75, range: 4000 },
     'glass-5': { x: 0, y: 350, range: 4000 },
     'glass-6': { x: -15, y: 300, range: 6200 },
     'glass-7': { x: 15, y: 1200, range: 4200 },
-};
+});
+
+const glassConfig = getGlassConfig();
 
 const glassElementIds = Object.keys(glassConfig);
 
@@ -146,8 +148,9 @@ const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
 const applyTransforms = (scrollY: number) => {
     const elements = getGlassElements();
+    const currentConfig = getGlassConfig();
     for (const el of elements) {
-        const cfg = glassConfig[el.id];
+        const cfg = currentConfig[el.id];
         const progress = Math.min(1, Math.max(0, scrollY / cfg.range));
         const eased = easeOutCubic(progress);
         const tx = cfg.x * eased;
@@ -201,6 +204,9 @@ onMounted(() => {
 
     handleResizeRef = () => {
         updateOverflowBehavior();
+        // Reapply transforms with updated config after resize
+        const y = window.scrollY || window.pageYOffset || 0;
+        applyTransforms(y);
     };
 
     window.addEventListener('scroll', handleScrollRef, { passive: true });

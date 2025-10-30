@@ -9,13 +9,15 @@
           "title": "Virtual Holocaust Memory, a Book Review",
           "teaserText": "In recent decades, the memory of the Holocaust has found its place in the virtual world. By presenting the recently published monograph by Matthew Boswell and Antony Rowland, this article explores this new place.",
           "authors": "Gabor Mihaly Toth",
-          "date": "Forthcoming"
+          "date": "Forthcoming",
+          "location_detail" : "Holocaust and Genocide Studies"
         },
         {
           "title": "Crying like a Baby : Multimodal Survival Analysis of Holocaust Testimonies",
           "date": "Forthcoming",
           "teaserText": "Crying like a baby is a phrase we often hear in survivors' testimonies. But how often do women and men cry in their testimonies? Most importantly, which memories cause them to cry? This paper searches for answers.",
-          "authors": "Gabor Mihaly Toth et al."
+          "authors": "Gabor Mihaly Toth et al.",
+          "location_detail" : "Proceeding of the Computational Humanities Research Conference, 2025"
         }
       ]
     },

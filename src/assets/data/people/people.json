@@ -21,6 +21,22 @@
                 
 			},
 			{
+				"name": "Julia Hörath",
+				"role": "Scientific Team",
+				"description": "Julia is a historian and political scientist; her expertise lies in the history of the National Socialist Concentration Camps.",
+				"image": "Julia.jpg",
+                "altText": "Photo of the team member"
+                
+			},
+			{
+				"name": "Christina Winkler",
+				"role": "Scientific Team",
+				"description": "Christina is a Slavicist and Holocaust historian; she specializes in oral history and the Holocaust on Soviet territory.",
+				"image": "Christina.jpg",
+                "altText": "Photo of the team member"
+                
+			},
+			{
 				"name": "Shrikanth Narayanan",
 				"role": "Scientific Team",
 				"description": "Shri is an engineer scientist at the University of Southern California; he is a pioneer of behavioral signal processing.",

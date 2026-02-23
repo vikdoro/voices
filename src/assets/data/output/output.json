@@ -13,11 +13,19 @@
           "location_detail" : "Holocaust and Genocide Studies"
         },
         {
-          "title": "Crying like a Baby : Multimodal Survival Analysis of Holocaust Testimonies",
+          "title": "Encoding Emotion Through Self-Supervised Eye Movement Reconstruction",
+          "teaserText": "The eyes of survivors tell the stories of a difficult past. This paper in computer science and engineering shows how state-of-the-art technology can help uncover deep emotions by tracking the eye movements of survivors in video interviews.",
+          "authors": "Marcus Ma et al.",
           "date": "Forthcoming",
+          "location_detail" : "Proceedings of ICASSP 2026"
+        },
+        {
+          "title": "Crying like a Baby : Multimodal Survival Analysis of Holocaust Testimonies",
+          "date": "December, 2025",
           "teaserText": "Crying like a baby is a phrase we often hear in survivors' testimonies. But how often do women and men cry in their testimonies? Most importantly, which memories cause them to cry? This paper searches for answers.",
           "authors": "Gabor Mihaly Toth et al.",
-          "location_detail" : "Proceeding of the Computational Humanities Research Conference, 2025"
+          "location_detail" : "Proceeding of the Computational Humanities Research Conference, 2025",
+          "link" : "https://anthology.ach.org/volumes/vol0003/crying-like-baby-survival-analysis-multimodal-of/"
         }
       ]
     },
